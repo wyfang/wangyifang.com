@@ -8,6 +8,12 @@
 
 `img/qr/` 中的二维码可能包含个人账号或支付信息，不应复制或用于冒充、引流和交易。
 
+## Wi-Fi 游戏手册素材
+
+`steamgame/Wi-Fi/guide-assets/penguin.png` 与 `penguin-frames.png` 裁自 Wi-Fi 游戏中的 `Wi-Fi Penguin/spritesheet.png`，用于自定义宠物说明。
+
+`cs2-crosshair.png` 来自作者提供的 [Figma 准星设计](https://www.figma.com/design/8Vn2wcmaWZEmueajy5pDie/?node-id=411-10)，保留 20×20 原始透明 PNG；`cs2-pixel-alignment.svg`、`calibration-before.svg` 和 `calibration-after.svg` 根据该图制作像素与位置说明，后两者为示意图，不是游戏截图。这些游戏素材与设计展示不随网站代码开放许可。
+
 ## 第三方标识
 
 `img/`、`img/sm/`、`1.0/` 与 `2.0/` 中出现的平台名称、商标、Logo、游戏图形和服务图标只用于指向或说明相应服务，不表示权利人赞助、认可或与本网站存在合作。除非相应权利人另行许可，不提供提取复用权限。

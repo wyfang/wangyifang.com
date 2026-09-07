@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 716" role="img" aria-labelledby="title desc">
+  <title id="title">CS2 准星图片的像素位置示例</title>
+  <desc id="desc">将用户提供的 20 乘 20 像素准星放大。白色中心点占 1 个像素，位于从左上角数第 11 列、第 11 行。白点左侧有 10 列、右侧有 9 列，上方有 10 行、下方有 9 行。这些数字是画布中的行列数量，不代表透明留白。</desc>
+  <defs>
+    <pattern id="checker" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#f8f7f0"/><path d="M0 0H20V20H0ZM20 20H40V40H20Z" fill="#e8eee5"/></pattern>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#849892" stroke-opacity=".36" stroke-width="1"/></pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1L7 4L1 7" fill="none" stroke="#617e8a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect width="800" height="716" rx="28" fill="#faf8f1"/>
+  <g font-family="PingFang SC, Microsoft YaHei, system-ui, sans-serif" fill="#283e4b">
+    <rect x="32" y="28" width="140" height="34" rx="17" fill="#e2ebdf"/>
+    <text x="102" y="51" text-anchor="middle" font-size="16" font-weight="600">像素放大图</text>
+    <text x="34" y="98" font-size="27" font-weight="700">白色中心点，占 1 个像素</text>
+    <text x="767" y="50" text-anchor="end" font-size="16" fill="#677981">20 × 20 px 原图 · 每格 1 px</text>
+
+    <rect x="200" y="180" width="400" height="400" fill="url(#checker)"/>
+    <g transform="translate(200 180) scale(20)" shape-rendering="crispEdges">
+    <rect x="2" y="9" width="1" height="1" fill="#000000" fill-opacity="0.149020"/>
+    <rect x="3" y="9" width="1" height="1" fill="#000000" fill-opacity="0.247059"/>
+    <rect x="4" y="9" width="1" height="1" fill="#020202" fill-opacity="0.447059"/>
+    <rect x="5" y="9" width="1" height="1" fill="#000000" fill-opacity="0.643137"/>
+    <rect x="6" y="9" width="1" height="1" fill="#000000" fill-opacity="0.745098"/>
+    <rect x="9" y="9" width="1" height="1" fill="#000000" fill-opacity="0.298039"/>
+    <rect x="10" y="9" width="1" height="1" fill="#00ff00" fill-opacity="1.000000"/>
+    <rect x="11" y="9" width="1" height="1" fill="#000000" fill-opacity="0.298039"/>
+    <rect x="14" y="9" width="1" height="1" fill="#000000" fill-opacity="0.745098"/>
+    <rect x="15" y="9" width="1" height="1" fill="#000000" fill-opacity="0.643137"/>
+    <rect x="16" y="9" width="1" height="1" fill="#000000" fill-opacity="0.447059"/>
+    <rect x="17" y="9" width="1" height="1" fill="#000000" fill-opacity="0.243137"/>
+    <rect x="18" y="9" width="1" height="1" fill="#000000" fill-opacity="0.145098"/>
+    <rect x="2" y="10" width="1" height="1" fill="#000000" fill-opacity="0.145098"/>
+    <rect x="3" y="10" width="1" height="1" fill="#ffff00" fill-opacity="0.298039"/>
+    <rect x="4" y="10" width="1" height="1" fill="#ffff00" fill-opacity="0.690196"/>
+    <rect x="5" y="10" width="1" height="1" fill="#ffff01" fill-opacity="0.984314"/>
+    <rect x="6" y="10" width="1" height="1" fill="#000000" fill-opacity="0.749020"/>
+    <rect x="9" y="10" width="1" height="1" fill="#00ff00" fill-opacity="1.000000"/>
+    <rect x="10" y="10" width="1" height="1" fill="#ffffff" fill-opacity="1.000000"/>
+    <rect x="11" y="10" width="1" height="1" fill="#00ff00" fill-opacity="1.000000"/>
+    <rect x="14" y="10" width="1" height="1" fill="#000000" fill-opacity="0.745098"/>
+    <rect x="15" y="10" width="1" height="1" fill="#ffff00" fill-opacity="0.980392"/>
+    <rect x="16" y="10" width="1" height="1" fill="#ffff00" fill-opacity="0.698039"/>
+    <rect x="17" y="10" width="1" height="1" fill="#ffff00" fill-opacity="0.294118"/>
+    <rect x="18" y="10" width="1" height="1" fill="#000000" fill-opacity="0.145098"/>
+    <rect x="2" y="11" width="1" height="1" fill="#000000" fill-opacity="0.149020"/>
+    <rect x="3" y="11" width="1" height="1" fill="#040404" fill-opacity="0.247059"/>
+    <rect x="4" y="11" width="1" height="1" fill="#000000" fill-opacity="0.443137"/>
+    <rect x="5" y="11" width="1" height="1" fill="#000000" fill-opacity="0.647059"/>
+    <rect x="6" y="11" width="1" height="1" fill="#000000" fill-opacity="0.749020"/>
+    <rect x="9" y="11" width="1" height="1" fill="#000000" fill-opacity="0.298039"/>
+    <rect x="10" y="11" width="1" height="1" fill="#00ff00" fill-opacity="1.000000"/>
+    <rect x="11" y="11" width="1" height="1" fill="#000000" fill-opacity="0.298039"/>
+    <rect x="14" y="11" width="1" height="1" fill="#000000" fill-opacity="0.749020"/>
+    <rect x="15" y="11" width="1" height="1" fill="#000000" fill-opacity="0.643137"/>
+    <rect x="16" y="11" width="1" height="1" fill="#000000" fill-opacity="0.447059"/>
+    <rect x="17" y="11" width="1" height="1" fill="#000000" fill-opacity="0.243137"/>
+    <rect x="18" y="11" width="1" height="1" fill="#000000" fill-opacity="0.145098"/>
+    <rect x="9" y="14" width="1" height="1" fill="#010101" fill-opacity="0.749020"/>
+    <rect x="10" y="14" width="1" height="1" fill="#000000" fill-opacity="0.749020"/>
+    <rect x="11" y="14" width="1" height="1" fill="#000000" fill-opacity="0.745098"/>
+    <rect x="9" y="15" width="1" height="1" fill="#000000" fill-opacity="0.647059"/>
+    <rect x="10" y="15" width="1" height="1" fill="#ffff00" fill-opacity="0.984314"/>
+    <rect x="11" y="15" width="1" height="1" fill="#000000" fill-opacity="0.643137"/>
+    <rect x="9" y="16" width="1" height="1" fill="#000000" fill-opacity="0.447059"/>
+    <rect x="10" y="16" width="1" height="1" fill="#ffff00" fill-opacity="0.698039"/>
+    <rect x="11" y="16" width="1" height="1" fill="#000000" fill-opacity="0.447059"/>
+    <rect x="9" y="17" width="1" height="1" fill="#000000" fill-opacity="0.247059"/>
+    <rect x="10" y="17" width="1" height="1" fill="#ffff00" fill-opacity="0.298039"/>
+    <rect x="11" y="17" width="1" height="1" fill="#000000" fill-opacity="0.247059"/>
+    <rect x="9" y="18" width="1" height="1" fill="#000000" fill-opacity="0.145098"/>
+    <rect x="10" y="18" width="1" height="1" fill="#000000" fill-opacity="0.149020"/>
+    <rect x="11" y="18" width="1" height="1" fill="#000000" fill-opacity="0.145098"/>
+    </g>
+    <rect x="200" y="180" width="400" height="400" fill="url(#grid)"/>
+    <rect x="200" y="180" width="400" height="400" rx="1" fill="none" stroke="#8ca19b" stroke-width="1.5"/>
+
+    <g stroke="#617e8a" fill="none" stroke-width="1.5">
+      <path d="M200 166V145M400 166V145M420 166V145M600 166V145"/>
+      <path d="M204 149H396M424 149H596" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+      <path d="M185 180H164M185 380H164M185 400H164M185 580H164"/>
+      <path d="M169 184V376M169 404V576" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text x="300" y="136" text-anchor="middle" font-size="23" font-weight="700">左侧 10 列</text>
+    <text x="510" y="136" text-anchor="middle" font-size="23" font-weight="700">右侧 9 列</text>
+    <text x="94" y="274" text-anchor="middle" font-size="23" font-weight="700">上方</text>
+    <text x="94" y="306" text-anchor="middle" font-size="25" font-weight="700">10 行</text>
+    <text x="94" y="484" text-anchor="middle" font-size="23" font-weight="700">下方</text>
+    <text x="94" y="516" text-anchor="middle" font-size="25" font-weight="700">9 行</text>
+
+    <rect x="399" y="379" width="22" height="22" fill="none" stroke="#ba753e" stroke-width="2"/>
+    <path d="M423 399L646 438" fill="none" stroke="#ba753e" stroke-width="1.8"/>
+    <rect x="625" y="431" width="148" height="85" rx="17" fill="#f4e5cf"/>
+    <text x="699" y="463" text-anchor="middle" font-size="22" font-weight="700">白色 1 px</text>
+    <text x="699" y="493" text-anchor="middle" font-size="16" fill="#746345">第 11 列 · 第 11 行</text>
+
+    <rect x="32" y="612" width="736" height="76" rx="17" fill="#e5eef0"/>
+    <text x="54" y="642" font-size="20" font-weight="600">10 + 1 + 9 = 20</text>
+    <text x="54" y="670" font-size="17" fill="#516b79">行列数不包含白点本身，也不代表透明留白。</text>
+    <text x="746" y="642" text-anchor="end" font-size="17" fill="#516b79">保留原图像素与颜色</text>
+    <text x="746" y="670" text-anchor="end" font-size="17" fill="#516b79">以游戏实际准星校准</text>
+  </g>
+</svg>

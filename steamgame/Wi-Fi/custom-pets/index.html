@@ -1,194 +1,80 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wi-Fi 自定义宠物说明</title>
-    <style>
-      :root {
-        color-scheme: dark;
-        --background: #09090b;
-        --foreground: #fafafa;
-        --muted: #a1a1aa;
-        --border: #27272a;
-        --card: #0f0f11;
-        --accent: #18181b;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        background: var(--background);
-        color: var(--foreground);
-        font-family:
-          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-        line-height: 1.6;
-      }
-
-      main {
-        width: min(880px, calc(100% - 32px));
-        margin: 0 auto;
-        padding: 48px 0 64px;
-      }
-
-      h1,
-      h2 {
-        margin: 0;
-        line-height: 1.2;
-        letter-spacing: 0;
-      }
-
-      h1 {
-        font-size: 32px;
-        font-weight: 700;
-      }
-
-      h2 {
-        font-size: 18px;
-        font-weight: 600;
-      }
-
-      p {
-        margin: 10px 0 0;
-        color: var(--muted);
-      }
-
-      section {
-        margin-top: 18px;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        background: var(--card);
-        padding: 20px;
-      }
-
-      code,
-      pre {
-        font-family:
-          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-          monospace;
-      }
-
-      code {
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        background: var(--accent);
-        padding: 2px 5px;
-        color: var(--foreground);
-      }
-
-      pre {
-        overflow: auto;
-        margin: 12px 0 0;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        background: #050506;
-        padding: 14px;
-        color: #e4e4e7;
-        font-size: 13px;
-      }
-
-      ol,
-      ul {
-        margin: 12px 0 0;
-        padding-left: 22px;
-        color: var(--muted);
-      }
-
-      li + li {
-        margin-top: 6px;
-      }
-
-      .lead {
-        max-width: 720px;
-        margin-top: 12px;
-        font-size: 16px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      @media (max-width: 720px) {
-        main {
-          padding-top: 32px;
-        }
-
-        h1 {
-          font-size: 26px;
-        }
-
-        .grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="为 Wi-Fi 制作自己的桌面宠物：准备序列图、填写配置、放入账号目录，让喜欢的角色住进桌面。">
+  <title>自定义宠物 · Wi-Fi 游戏手册</title>
+  <link rel="icon" type="image/png" href="../guide-assets/penguin.png">
+  <link rel="stylesheet" href="../guide-assets/manual.css">
+  <script src="../guide-assets/manual.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#start">跳到使用说明</a>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="../custom-pets/" aria-label="Wi-Fi 游戏手册"><img src="../guide-assets/penguin.png" width="37" height="40" alt=""><span><strong>Wi-Fi</strong><small>游戏手册</small></span></a>
+      <nav class="guide-nav" aria-label="选择说明书"><a href="../custom-pets/" aria-current="page">自定义宠物</a><a href="../custom-crosshairs/">自定义准星</a></nav>
+      <a class="steam-link" href="/">返回网站 <span aria-hidden="true">↗</span></a>
+    </header>
     <main>
-      <h1>Wi-Fi 自定义宠物</h1>
-      <p class="lead">
-        一个宠物就是一个文件夹。文件夹名会显示在 Wi-Fi 的宠物菜单里，放入序列图后即可被识别。
-      </p>
-
-      <section>
-        <h2>放在哪里</h2>
-        <div class="grid">
-          <div>
-            <p>macOS</p>
-            <pre>~/Library/Application Support/com.wangyifang.Wi-Fi/pets/custom/</pre>
-          </div>
-          <div>
-            <p>Windows</p>
-            <pre>%LOCALAPPDATA%\com.wangyifang.Wi-Fi\pets\custom\</pre>
-          </div>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <div class="eyebrow">Wi-Fi · 自定义宠物</div>
+          <h1 id="page-title">让喜欢的角色，<br>住进你的桌面。</h1>
+          <p>一张序列图，一份小小的配置。<br>把你画的角色，变成每天陪伴你的桌面伙伴。</p>
+          <div class="hero-bottom"><a class="button" href="#start">开始制作 <span aria-hidden="true">↓</span></a><span>从一个文件夹开始</span></div>
         </div>
+        <div class="hero-art" aria-hidden="true"><div class="pet-stage"><img class="hero-penguin" src="../guide-assets/penguin.png" width="192" height="208" alt=""></div><div class="speech">今天也一起待着吧！</div><div class="sticker">我的桌面新朋友</div><span class="star one">✦</span><span class="star two">✧</span></div>
       </section>
-
-      <section>
-        <h2>最小文件结构</h2>
-        <pre>我的宠物/
-  spritesheet.webp</pre>
-        <p>
-          支持 <code>spritesheet.png</code>、<code>spritesheet.webp</code>、<code>spritesheet.gif</code>、<code>spritesheet.jpg</code>、<code>spritesheet.jpeg</code>。
-          如果没有 <code>config.json</code>，Wi-Fi 会使用默认配置。
-        </p>
-      </section>
-
-      <section>
-        <h2>可选 config.json</h2>
-        <pre>{
-  "spritesheet": "spritesheet.webp",
+      <nav class="chapter-strip" aria-label="快速导航"><strong>这本手册里</strong><a href="#start">准备素材</a><span>／</span><a href="#folder">放入文件夹</a><span>／</span><a href="#animation">让角色动起来</a><span>／</span><a href="#questions">常见问题</a></nav>
+      <div class="reading-layout">
+        <aside class="toc" aria-label="本页目录"><p>自定义宠物</p><a href="#start"><span>01</span>准备一个新朋友</a><a href="#folder"><span>02</span>给它一个小家</a><a href="#animation"><span>03</span>让角色动起来</a><a href="#questions"><span>04</span>遇到一点小问题</a><div class="toc-note">先用一行动画试试看。<br>熟悉之后，再添上更多表情与动作。</div></aside>
+        <div>
+          <section class="manual-section" id="start">
+            <div class="section-heading"><span class="number">01</span><h2>准备一个新朋友</h2></div>
+            <p class="intro">一个宠物就是一个文件夹。文件夹的名字，也是它在宠物菜单里的名字。准备好下面两份文件，就可以开始了。</p>
+            <ol class="steps"><li><span class="step-mark">1</span><h3>画好每一帧</h3><p>把动作按顺序排成序列图，每帧大小一致，推荐使用透明背景。</p></li><li><span class="step-mark">2</span><h3>写一份配置</h3><p>用 config.json 告诉 Wi-Fi 每帧多大、动作在哪一行、播放多快。</p></li><li><span class="step-mark">3</span><h3>放入并选择</h3><p>放进自定义宠物目录，重新打开宠物菜单，选择你的角色。</p></li></ol>
+          </section>
+          <section class="manual-section" id="folder">
+            <div class="section-heading"><span class="number">02</span><h2>给它一个小家</h2></div>
+            <p class="intro">在当前账号的 <code>pets/custom/</code> 目录里，新建一个以宠物名字命名的文件夹。</p>
+            <div class="path-grid"><div class="path-card"><h3>macOS</h3><code>~/Library/Application Support/com.wangyifang.Wi-Fi/&lt;账号&gt;/pets/custom/</code></div><div class="path-card"><h3>Windows</h3><code>%LOCALAPPDATA%\com.wangyifang.Wi-Fi\&lt;账号&gt;\pets\custom\</code></div></div>
+            <p class="intro"><code>&lt;账号&gt;</code> 指当前 Steam 账号的数字目录；未连接 Steam 时为 <code>local</code>。macOS 可在访达按 <code>⌘ ⇧ G</code> 前往路径，Windows 可在文件资源管理器地址栏输入路径。</p>
+            <div class="code-block"><div class="code-header">文件夹里放这两份文件</div><pre class="file-tree">我的宠物/
+├── spritesheet.png
+└── config.json</pre></div>
+            <div class="note">序列图支持 PNG、WebP、GIF、JPG 和 JPEG。透明 PNG 或 WebP 更适合桌面宠物；图片文件名需要与配置中的 <code>spritesheet</code> 一致。</div>
+          </section>
+          <section class="manual-section" id="animation">
+            <div class="section-heading"><span class="number">03</span><h2>让角色动起来</h2></div>
+            <p class="intro">先从一行动画开始：下面的企鹅有 6 帧，每帧 192×208 像素，所以整张序列图是 1152×208 像素。</p>
+            <figure class="sprite-figure"><img src="../guide-assets/penguin-frames.png" width="1152" height="208" alt="同一只红围巾像素企鹅的六帧动作，从左到右排列"><div class="frame-labels" aria-hidden="true"><span>第 1 帧</span><span>第 2 帧</span><span>第 3 帧</span><span>第 4 帧</span><span>第 5 帧</span><span>第 6 帧</span></div><figcaption>把一连串小动作，排成一张图。每一格保持相同尺寸，角色在格子里的位置也尽量一致。</figcaption></figure>
+            <p class="intro">将下面的内容保存为 <code>config.json</code>，和对应的序列图放在一起。换成自己的素材时，记得修改帧尺寸和帧数。</p>
+            <div class="code-block"><div class="code-header"><span>config.json · 一行六帧示例</span><button class="copy" type="button" data-copy aria-live="polite">复制配置</button></div><pre>{
+  "spritesheet": "spritesheet.png",
   "frame": { "width": 192, "height": 208 },
   "scale": 0.5,
-  "fps": 12,
-  "priority": 10,
+  "fps": 6,
   "animations": {
-    "default": { "row": 1, "frames": 8, "fps": 6, "mode": "once" },
-    "hover": { "row": 1, "frames": 6, "fps": 6, "mode": "once" },
-    "dragLeft": { "row": 3, "frames": 8, "fps": 8, "mode": "loop" },
-    "dragRight": { "row": 2, "frames": 8, "fps": 8, "mode": "loop" }
+    "default": { "row": 1, "frames": 6, "fps": 6, "mode": "once" }
   }
-}</pre>
-        <p>
-          <code>row</code> 从 1 开始。<code>priority</code> 越小，菜单排序越靠前。
-        </p>
-      </section>
-
-      <section>
-        <h2>制作建议</h2>
-        <ul>
-          <li>每一帧尺寸保持一致，例如 192×208。</li>
-          <li>透明背景能让宠物看起来更自然。</li>
-          <li>鼠标命中区域可以使用 <code>interaction.hitMaskRow</code> 指定专用行。</li>
-          <li>替换文件后重新打开宠物菜单，Wi-Fi 会重新扫描本地自定义宠物。</li>
-        </ul>
-      </section>
+}</pre></div>
+            <table class="facts"><caption class="visually-hidden">配置字段说明</caption><tbody><tr><th scope="row">frame</th><td>单帧宽高，不是整张序列图的宽高。</td></tr><tr><th scope="row">scale</th><td>桌面显示比例。<code>0.5</code> 表示按单帧尺寸的一半显示。</td></tr><tr><th scope="row">row / frames</th><td>动画所在行与这一行使用的帧数。行号从 <code>1</code> 开始。</td></tr><tr><th scope="row">fps / mode</th><td>每秒播放多少帧。<code>once</code> 播放一次；<code>loop</code> 循环到状态切换。</td></tr></tbody></table>
+            <div class="small-grid"><div><h3>多一些动作</h3><p>在序列图增加新的一行，就可以为 <code>hover</code>、<code>dragLeft</code>、<code>dragRight</code> 配置不同动作。上面的最小示例中，未单独配置的状态也会使用这一行动画。</p></div><div><h3>换好后，再打开菜单</h3><p>保存文件后，重新打开宠物菜单，让 Wi-Fi 重新扫描，再选择你的宠物。每次修改都可以这样预览。</p></div></div>
+          </section>
+          <section class="manual-section" id="questions">
+            <div class="section-heading"><span class="number">04</span><h2>遇到一点小问题</h2></div>
+            <details><summary>菜单里没有出现我的宠物？</summary><p>先确认放在了当前账号的 <code>pets/custom/我的宠物/</code> 中，再检查图片文件名与配置是否一致、JSON 是否有效。最后重新打开宠物菜单。</p></details>
+            <details><summary>角色被切开，或者动作跳来跳去？</summary><p>检查 <code>frame.width</code>、<code>frame.height</code> 是否为单帧尺寸，<code>row</code>、<code>frames</code> 是否与序列图对应。每一帧中的角色位置也应保持一致。</p></details>
+            <details><summary>可以省略 config.json 吗？</summary><p>只有素材恰好符合内置默认布局时才适用。制作自己的角色时，建议保留配置，明确填写帧尺寸和动画布局。</p></details>
+            <details><summary>为什么有一块背景，或者鼠标命中区域不合适？</summary><p>导出图片时保留透明通道，不要把棋盘格画进图片。需要更精细的鼠标命中范围时，可在配置中用 <code>interaction.hitMaskRow</code> 指定专用命中行。</p></details>
+          </section>
+          <a class="next-guide" href="../custom-crosshairs/"><div><small>继续翻一页</small><strong>也为游戏画一枚准星</strong></div><span aria-hidden="true">→</span></a>
+        </div>
+      </div>
     </main>
-  </body>
+    <footer class="page-footer"><span>Wi-Fi 游戏手册 · 给桌面添一点自己的喜欢</span><a href="#page-title">回到顶部 ↑</a></footer>
+  </div>
+</body>
 </html>

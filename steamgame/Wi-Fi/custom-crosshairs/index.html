@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="在 Wi-Fi 中选择透明 PNG 作为自定义准星。通过 CS2 1920×1080 的像素图例，了解中心点位置并对照游戏内准星或狙击镜完成校准。">
+  <title>自定义准星 · Wi-Fi 游戏手册</title>
+  <link rel="icon" type="image/png" href="../guide-assets/penguin.png">
+  <link rel="stylesheet" href="../guide-assets/manual.css">
+</head>
+<body>
+  <a class="skip-link" href="#start">跳到使用说明</a>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="../custom-pets/" aria-label="Wi-Fi 游戏手册"><img src="../guide-assets/penguin.png" width="37" height="40" alt=""><span><strong>Wi-Fi</strong><small>游戏手册</small></span></a>
+      <nav class="guide-nav" aria-label="选择说明书"><a href="../custom-pets/">自定义宠物</a><a href="../custom-crosshairs/" aria-current="page">自定义准星</a></nav>
+      <a class="steam-link" href="/">返回网站 <span aria-hidden="true">↗</span></a>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy"><div class="eyebrow">Wi-Fi · 自定义准星</div><h1 id="page-title">画一枚<br>自己的准星。</h1><p>把喜欢的形状，放在视线中央。<br>选一张透明 PNG，再到游戏里仔细对齐。</p><div class="hero-bottom"><a class="button" href="#start">开始设置 <span aria-hidden="true">↓</span></a><span>一张图片，就可以开始</span></div></div>
+        <div class="hero-art crosshair-art" aria-hidden="true"><div class="crosshair-stage"><div class="landscape-sun"></div><div class="landscape-hill back"></div><div class="landscape-hill"></div><img class="aim-symbol" src="../guide-assets/cs2-crosshair.png" width="20" height="20" alt=""><span class="stage-label">我的准星 · 自己定义</span></div><div class="speech">瞄准喜欢的样子</div><div class="sticker">透明 PNG，小小一点就好</div></div>
+      </section>
+      <nav class="chapter-strip" aria-label="快速导航"><strong>这本手册里</strong><a href="#start">选择图片</a><span>／</span><a href="#alignment">认识中心点</a><span>／</span><a href="#calibrate">在游戏里校准</a><span>／</span><a href="#save">保存与调整</a></nav>
+      <div class="reading-layout">
+        <aside class="toc" aria-label="本页目录"><p>自定义准星</p><a href="#start"><span>01</span>选一张喜欢的图片</a><a href="#alignment"><span>02</span>中心点，差一点也不同</a><a href="#calibrate"><span>03</span>到游戏里对齐一次</a><a href="#save"><span>04</span>保存与日常调整</a><a href="#questions"><span>05</span>遇到一点小问题</a><div class="toc-note">图片居中是起点。<br>最后的位置，以游戏里的瞄准点为准。</div></aside>
+        <div>
+          <section class="manual-section" id="start">
+            <div class="section-heading"><span class="number">01</span><h2>选一张喜欢的图片</h2></div>
+            <p class="intro">准备一张 PNG，建议使用透明背景，只留下准星图案。先把图片做成你希望显示的大小，避免在画布周围留下大面积无用区域。</p>
+            <ol class="steps"><li><span class="step-mark">1</span><h3>准备透明 PNG</h3><p>在绘图软件里画好准星，保留透明通道。棋盘格只是编辑器的背景，不要一起导出。</p></li><li><span class="step-mark">2</span><h3>点击「选择图片」</h3><p>从挂件菜单进入自定义准星，选择 PNG 后，准星会立即显示并居中。</p></li><li><span class="step-mark">3</span><h3>进游戏确认位置</h3><p>保留游戏内准星，或打开狙击镜，对照实际瞄准点再微调。</p></li></ol>
+            <div class="menu-route" aria-label="菜单路径"><b>挂件</b><span>›</span><b>自定义准星</b><span>›</span><b>选择图片</b></div>
+          </section>
+          <section class="manual-section" id="alignment">
+            <div class="section-heading"><span class="number">02</span><h2>中心点，差一点也不同</h2></div>
+            <p class="intro">Wi-Fi 会将整张图片的画布居中；图片里真正用来瞄准的那个点，需要你自己确认。不同游戏、分辨率和显示缩放下，合适的像素位置可能不同，不能只靠把图形看起来放在正中间。</p>
+            <div class="calibration-card">
+              <div class="calibration-head"><strong>一个具体的像素例子</strong><span>CS2 · 1920×1080</span></div>
+              <figure class="pixel-figure"><a href="../guide-assets/cs2-pixel-alignment.svg" target="_blank" rel="noopener" aria-label="查看完整像素图解"><img src="../guide-assets/cs2-pixel-alignment.svg" width="800" height="716" alt="20×20 准星像素图。白色中心占一像素，左侧有10列、上方有10行，右侧有9列、下方有9行。"></a><figcaption>这是作者用于 CS2、1920×1080 分辨率的准星。原图为 20×20 像素，图中放大展示；每格代表 1 像素。标注数的是白色像素之外的行列数，包含其他颜色的图形。<a href="../guide-assets/cs2-pixel-alignment.svg" target="_blank" rel="noopener">查看大图 ↗</a></figcaption></figure>
+              <div class="calibration-points"><p><strong>左、上 10 px；右、下 9 px</strong>白色中心本身还占 1 px，所以每个方向合计都是 10 + 1 + 9 = 20 px。这个例子的瞄准点并没有让两侧像素数完全相等。</p><p><strong>画布中心与白点位置要分开看</strong>20×20 是偶数尺寸，画布正中心落在像素格的交界上。单个白色像素占一整格，需要在游戏里验证它是否对准实际瞄准点。</p></div>
+            </div>
+            <p class="intro">可在 <a class="inline-link" href="https://www.figma.com/design/8Vn2wcmaWZEmueajy5pDie/%E5%87%86%E6%98%9F?node-id=411-10" target="_blank" rel="noopener noreferrer">Figma 查看这枚准星的原始设计 ↗</a>。</p>
+            <div class="note"><strong>这个比例只说明这张图。</strong>不要把它当作所有游戏都应向右下偏移的规则。换游戏、分辨率或显示缩放后，请重新对照确认。</div>
+          </section>
+          <section class="manual-section" id="calibrate">
+            <div class="section-heading"><span class="number">03</span><h2>到游戏里，对齐一次</h2></div>
+            <p class="intro">找一个方便观察的训练场景，让游戏内置准星或狙击镜中心作为参照。要比较的是自定义准星的瞄准点，与游戏参照点是否重合。</p>
+            <div class="comparison-grid">
+              <figure><img src="../guide-assets/calibration-before.svg" width="360" height="260" alt="调整前，自定义准星的白点在狙击镜十字中心的右下方"><figcaption><strong>调整前 · 两个点错开了</strong>白色瞄准点与深色十字中心不重合。</figcaption></figure>
+              <figure><img src="../guide-assets/calibration-after.svg" width="360" height="260" alt="调整后，自定义准星的白点与狙击镜十字中心重合"><figcaption><strong>调整后 · 瞄准同一个点</strong>让白点对齐游戏里的实际参照点。</figcaption></figure>
+            </div>
+            <p class="figure-note">位置关系示意，并非游戏截图。偏移经过夸大，便于看清；参照点也可以使用游戏内置准星。</p>
+            <ol class="checklist"><li><strong>固定游戏显示设置</strong><p>先选好实际游玩的分辨率、窗口模式和系统显示缩放。例如这里的 CS2 示例使用 1920×1080。</p></li><li><strong>把两个瞄准点放在一起比较</strong><p>显示自定义准星，同时保留内置准星或打开狙击镜，观察白色瞄准点是否与游戏中心重合。必要时截屏放大，逐像素检查。</p></li><li><strong>微调，再看一遍</strong><p>如果不重合，可解锁并拖动挂件调整位置；需要改图片内部的像素排布时，在绘图软件中微调瞄准点，导出后重新「选择图片」，再进入游戏验证。</p></li><li><strong>确认后锁定位置</strong><p>对齐后开启锁定，让鼠标穿透准星。之后更换图片、分辨率、窗口模式或显示缩放时，再做一次校准。</p></li></ol>
+            <div class="note">「重置位置」会重新居中整张图片。若你曾手动校准挂件位置，重置后也需要再对照游戏确认。</div>
+          </section>
+          <section class="manual-section" id="save">
+            <div class="section-heading"><span class="number">04</span><h2>保存好，下次接着用</h2></div>
+            <p class="intro">选择图片后，Wi-Fi 会把原始 PNG 复制到当前账号的资料目录，保存为 <code>custom-crosshair.png</code>。移动或删除你最初选择的文件，不会影响已经保存的准星；再次选择图片会替换这份文件。</p>
+            <div class="path-grid"><div class="path-card"><h3>macOS</h3><code>~/Library/Application Support/com.wangyifang.Wi-Fi/&lt;账号&gt;/custom-crosshair.png</code></div><div class="path-card"><h3>Windows</h3><code>%LOCALAPPDATA%\com.wangyifang.Wi-Fi\&lt;账号&gt;\custom-crosshair.png</code></div></div>
+            <p class="intro"><code>&lt;账号&gt;</code> 是当前 Steam 账号的数字目录；未连接 Steam 时为 <code>local</code>。</p>
+            <table class="facts"><caption class="visually-hidden">自定义准星操作说明</caption><tbody><tr><th scope="row">开启 / 关闭</th><td>在菜单中切换显示，不需要每次重新选择图片。</td></tr><tr><th scope="row">拖动 / 居中</th><td>解锁后调整位置；重置位置可让图片重新回到屏幕中央。</td></tr><tr><th scope="row">置顶 / 锁定</th><td>置顶让准星保持在其他窗口上方；锁定后鼠标穿透。需要再调整时，从菜单解锁。</td></tr><tr><th scope="row">不透明度</th><td>可在 25%–100% 之间调整，兼顾看清准星与游戏画面。</td></tr></tbody></table>
+          </section>
+          <section class="manual-section" id="questions">
+            <div class="section-heading"><span class="number">05</span><h2>遇到一点小问题</h2></div>
+            <details><summary>为什么准星周围有白底或棋盘格？</summary><p>这些背景可能已经画进 PNG。请在绘图软件中移除背景，并以透明 PNG 导出。文件扩展名是 PNG，并不代表内容一定透明。</p></details>
+            <details><summary>为什么图片居中了，瞄准点还是有偏差？</summary><p>居中依据的是整张画布。画布尺寸、图案在画布中的位置，以及游戏分辨率和显示缩放都会影响最终结果。按上面的图解，对照游戏内置准星或狙击镜中心校准。</p></details>
+            <details><summary>图片大小有限制吗？能放大缩小吗？</summary><p>文件不超过 10 MiB，任一边不超过 8192 像素，总像素不超过 16,777,216。图片按原始宽高设置逻辑显示大小，最长边超过 830 时等比缩小；实际屏幕像素大小还受系统显示缩放影响。目前没有尺寸滑杆；请在绘图软件中先做好合适的大小。</p></details>
+            <details><summary>锁定后拖不动，怎么重新调整？</summary><p>回到「挂件 → 自定义准星」菜单解除锁定，再调整位置。校准完成后可以重新锁定。</p></details>
+          </section>
+          <a class="next-guide" href="../custom-pets/"><div><small>继续翻一页</small><strong>让自己的角色住进桌面</strong></div><span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer"><span>Wi-Fi 游戏手册 · 给桌面添一点自己的喜欢</span><a href="#page-title">回到顶部 ↑</a></footer>
+  </div>
+</body>
+</html>
