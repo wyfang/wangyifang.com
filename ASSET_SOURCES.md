@@ -10,11 +10,15 @@
 
 ## Wi-Fi 游戏手册素材
 
+`steamgame/Wi-Fi/guide-assets/wifi-mark.svg` 为本次绘制的简化企鹅头像，用于 Wi-Fi 页头、网站图标与分享封面，属于本站品牌展示素材，不随网站代码开放许可。
+
 `steamgame/Wi-Fi/guide-assets/penguin.png` 与 `penguin-frames.png` 裁自 Wi-Fi 游戏中的 `Wi-Fi Penguin/spritesheet.png`，用于自定义宠物说明。
 
 `pet-snow-leopard.png`、`pet-otter.png`、`pet-panda.png` 和 `pet-cat.png` 分别裁自本站 `steamgame/Wi-Fi/pets/` 下的 `白给雪豹`、`Otter`、`Panda` 与 `大开门` 皮肤序列图的首帧，保留透明背景，用于展示不同宠物造型。这些皮肤展示素材不随网站代码开放许可。
 
 `cs2-crosshair.png` 来自作者提供的 [Figma 准星设计](https://www.figma.com/design/8Vn2wcmaWZEmueajy5pDie/?node-id=411-10)，保留 20×20 原始透明 PNG；`cs2-pixel-alignment.svg`、`calibration-before.svg` 和 `calibration-after.svg` 根据该图制作像素与位置说明，后两者为示意图，不是游戏截图。这些游戏素材与设计展示不随网站代码开放许可。
+
+`steamgame/Wi-Fi/guide-assets/social-preview.png` 根据 Wi-Fi 落地页顶部展示区导出，复用本站的企鹅与桌面场景设计，用于社交媒体分享预览，不随网站代码开放许可。
 
 ## 第三方标识
 

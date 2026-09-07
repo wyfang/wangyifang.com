@@ -26,7 +26,7 @@ img { max-width: 100%; height: auto; display: block; }
 .wrap { width: min(1160px, calc(100% - 64px)); margin-inline: auto; }
 .site-header { min-height: 108px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 13px; text-decoration: none; justify-self: start; }
-.brand img { width: 37px; height: 40px; image-rendering: pixelated; }
+.brand img { width: 40px; height: 40px; flex-shrink: 0; }
 .brand strong { display: block; font-size: 22px; line-height: 1.2; letter-spacing: -.8px; }
 .brand small { display: block; font-size: 10px; font-weight: 700; letter-spacing: 2px; margin-top: 5px; color: var(--muted); }
 .guide-nav { display: flex; gap: 5px; padding: 5px; border: 1px solid var(--line); border-radius: 99px; }
@@ -40,7 +40,7 @@ img { max-width: 100%; height: auto; display: block; }
 .eyebrow::before { content: ""; width: 24px; height: 2px; background: currentColor; }
 h1 { font-size: clamp(36px, 4.6vw, 58px); letter-spacing: -2px; line-height: 1.35; margin: 20px 0 15px; font-weight: 800; }
 .hero-copy > p { max-width: 395px; font-size: 15px; line-height: 1.9; margin: 0; color: #516b79; }
-.hero-bottom { margin-top: 26px; display: flex; align-items: center; gap: 17px; font-size: 12px; color: var(--blue-ink); }
+.hero-bottom { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 17px; font-size: 12px; color: var(--blue-ink); }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 17px; background: var(--ink); color: white; border-radius: 99px; padding: 10px 21px; text-decoration: none; font-size: 13px; font-weight: 600; border: 0; min-height: 44px; }
 .button:hover { background: #416075; }
 .hero-art { align-self: center; position: relative; height: 300px; }
@@ -54,7 +54,7 @@ h1 { font-size: clamp(36px, 4.6vw, 58px); letter-spacing: -2px; line-height: 1.3
 .pet-gallery-note { grid-column: 1 / -1; margin: 3px 0 0; color: var(--blue-ink); font-size: 12px; text-align: center; }
 .speech { position: absolute; top: 0; right: 3px; font-size: 13px; font-weight: 600; background: white; padding: 9px 18px; border-radius: 16px 16px 16px 3px; transform: rotate(5deg); z-index: 2; }
 .sticker { position: absolute; bottom: 10px; left: 12px; padding: 10px 18px; background: #fce2af; border: 4px solid var(--paper); border-radius: 15px; font-size: 12px; font-weight: 700; transform: rotate(-7deg); z-index: 3; }
-.chapter-strip { display: flex; align-items: center; gap: 24px; padding: 23px 6px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.chapter-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; padding: 23px 6px; border-bottom: 1px solid var(--line); font-size: 13px; }
 .chapter-strip strong { color: var(--blue-ink); }
 .chapter-strip span { color: #a4b2b2; }
 .chapter-strip a { text-decoration: none; }.chapter-strip a:hover { text-decoration: underline; }
@@ -88,13 +88,12 @@ code, pre { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospac
 :not(pre) > code { padding: 2px 5px; background: #eaede5; border-radius: 4px; overflow-wrap: anywhere; }
 .path-card code { display: block; padding: 0; background: none; overflow-wrap: anywhere; line-height: 1.9; }
 .code-block { position: relative; border-radius: 17px; background: #edf1ee; overflow: hidden; margin: 20px 0; }
-.code-header { padding: 11px 19px; border-bottom: 1px solid #dce3dd; font-size: 12px; color: #617672; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.code-header { padding: 11px 19px; border-bottom: 1px solid #dce3dd; font-size: 12px; color: #617672; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
 .skill-downloads { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 22px 0; }
 .skill-downloads .inline-link { font-size: 13px; }
 .copy { border: 1px solid #cbd7d0; padding: 3px 12px; border-radius: 8px; background: transparent; color: #4e6a62; min-height: 30px; font-size: 11px; }
 .copy:hover { background: white; }
-pre { margin: 0; padding: 21px; overflow-x: auto; line-height: 1.85; color: #395b57; tab-size: 2; }
-pre.prompt-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+pre { margin: 0; padding: 21px; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.85; color: #395b57; tab-size: 2; }
 .file-tree { font-size: 14px; }
 .sprite-figure { margin: 23px 0; padding: 22px 18px 13px; background: #edf1ed; border-radius: 17px; }
 .sprite-figure img { width: 100%; image-rendering: pixelated; }
@@ -147,20 +146,21 @@ details p { color: var(--muted); margin: 13px 0 0; }
 @media (max-width: 740px) {
   .wrap { width: min(100% - 32px, 560px); }.site-header { min-height: 132px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-block: 18px; }
   .site-header .steam-link { display: block; font-size: 11px; }
-  .site-header .guide-nav { order: 3; width: 100%; justify-content: center; }
-  .brand { gap: 8px; }.brand strong { font-size: 20px; }.brand small { font-size: 8px; letter-spacing: 1px; }.brand img { width: 29px; height: 32px; }
-  .guide-nav { gap: 2px; padding: 4px; }.guide-nav a { font-size: 11px; padding: 7px 11px; }
-  .hero { grid-template-columns: 1fr; padding: 30px 27px 20px; border-radius: 27px; gap: 10px; }.hero-art { height: 230px; transform: scale(.85); width: 300px; max-width: 100%; margin: -7px auto 20px; }
+  .site-header .guide-nav { order: 3; width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .brand { gap: 8px; }.brand strong { font-size: 20px; }.brand small { font-size: 8px; letter-spacing: 1px; }.brand img { width: 32px; height: 32px; }
+  .guide-nav { gap: 2px; padding: 4px; }.guide-nav a { display: flex; align-items: center; justify-content: center; min-height: 44px; font-size: 12px; padding: 8px 4px; }
+  .hero { grid-template-columns: minmax(0, 1fr); padding: 30px 27px 20px; border-radius: 27px; gap: 10px; }.hero > * { min-width: 0; }.hero-art { height: 230px; transform: scale(.85); width: 300px; max-width: 100%; margin: -7px auto 20px; }
   .pet-gallery { margin-block: 22px 10px; gap: 14px; }.speech { top: -5px; }.hero-art .sticker { bottom: -18px; }
-  h1 { font-size: 39px; letter-spacing: -1.5px; margin-top: 16px; }.hero-copy > p { font-size: 13px; }.hero-bottom { margin-top: 20px; }.eyebrow { font-size: 10px; }
-  .chapter-strip { gap: 13px; overflow-x: auto; white-space: nowrap; font-size: 11px; padding: 18px 2px; }.chapter-strip strong { display: none; }
+  h1 { font-size: clamp(28px, 7.8vw, 39px); letter-spacing: -1.5px; margin-top: 16px; }.hero-copy > p { font-size: 13px; }.hero-bottom { margin-top: 20px; gap: 12px; }.eyebrow { font-size: 10px; }
+  .chapter-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 16px; font-size: 12px; padding: 14px 2px; }.chapter-strip strong, .chapter-strip > span { display: none; }.chapter-strip a { display: flex; align-items: center; min-height: 44px; }
   .reading-layout { grid-template-columns: 1fr; gap: 0; margin-top: 32px; }.toc { display: none; }
   .manual-section { padding-bottom: 30px; margin-bottom: 30px; }h2 { font-size: 21px; }.section-heading { gap: 12px; }
   .steps { gap: 20px; grid-template-columns: 1fr; }.steps li { position: relative; padding-left: 46px; }.step-mark { position: absolute; left: 0; top: 0; }.steps h3 { margin-bottom: 4px; }
   .path-grid, .small-grid { grid-template-columns: 1fr; }.path-grid { gap: 10px; }.path-card { padding: 15px 18px; }.small-grid { gap: 9px; }
+  .code-header { padding: 10px 14px; gap: 6px 12px; }.copy { min-height: 44px; flex-shrink: 0; }pre { padding: 16px 14px; }
   .calibration-card { padding: 17px 13px; border-radius: 18px; }.calibration-head { flex-wrap: wrap; gap: 8px; }.calibration-points { grid-template-columns: 1fr; gap: 13px; }
-  .page-footer { align-items: flex-start; font-size: 10px; }.page-footer > span { max-width: 200px; }.next-guide { padding: 20px; margin-bottom: 30px; }
-  .facts th { width: 95px; }.facts th, .facts td { padding: 11px 4px; font-size: 12px; }
+  .page-footer { align-items: flex-start; flex-wrap: wrap; gap: 12px; font-size: 10px; }.page-footer > span { max-width: 200px; }.next-guide { padding: 20px; margin-bottom: 30px; }
+  .facts { table-layout: fixed; overflow-wrap: anywhere; }.facts th { width: 30%; }.facts thead th { width: auto; }.facts th, .facts td { padding: 11px 4px; font-size: 12px; }
   .comparison-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
