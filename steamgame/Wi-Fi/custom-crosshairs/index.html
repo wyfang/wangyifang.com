@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="在 Wi-Fi 中选择透明 PNG 作为自定义准星。通过 CS2 1920×1080 的像素图例，了解中心点位置并对照游戏内准星或狙击镜完成校准。">
+  <meta name="description" content="了解 Wi-Fi 自定义准星支持的 PNG、APNG 动画格式，以及文件大小、画布尺寸和显示规格。通过 CS2 1920×1080 的像素图例，了解中心点位置并对照游戏内准星或狙击镜完成校准。">
   <title>自定义准星 · Wi-Fi 游戏手册</title>
   <link rel="icon" type="image/png" href="../guide-assets/penguin.png">
   <link rel="stylesheet" href="../guide-assets/manual.css">
@@ -27,9 +27,11 @@
         <div>
           <section class="manual-section" id="start">
             <div class="section-heading"><span class="number">01</span><h2>选一张喜欢的图片</h2></div>
-            <p class="intro">准备一张 PNG，建议使用透明背景，只留下准星图案。先把图片做成你希望显示的大小，避免在画布周围留下大面积无用区域。</p>
+            <p class="intro">准备一张静态 PNG 或 APNG 动画（使用 .png 后缀），建议使用透明背景，只留下准星图案。先把图片做成你希望显示的大小，避免在画布周围留下大面积无用区域。</p>
             <ol class="steps"><li><span class="step-mark">1</span><h3>准备透明 PNG</h3><p>在绘图软件里画好准星，保留透明通道。棋盘格只是编辑器的背景，不要一起导出。</p></li><li><span class="step-mark">2</span><h3>点击「选择图片」</h3><p>从挂件菜单进入自定义准星，选择 PNG 后，准星会立即显示并居中。</p></li><li><span class="step-mark">3</span><h3>进游戏确认位置</h3><p>保留游戏内准星，或打开狙击镜，对照实际瞄准点再微调。</p></li></ol>
             <div class="menu-route" aria-label="菜单路径"><b>挂件</b><span>›</span><b>自定义准星</b><span>›</span><b>选择图片</b></div>
+            <table class="facts"><caption>图片格式与规格</caption><tbody><tr><th scope="row">静态 PNG</th><td>支持 <strong>.png</strong>，推荐使用透明背景。</td></tr><tr><th scope="row">APNG 动画</th><td>支持使用 <strong>.png 后缀</strong>的 APNG 动画，保留图片自身的帧时长和循环设置。当前选择器不包含 <code>.apng</code> 后缀，请使用动画 PNG 的 <code>.png</code> 文件。</td></tr><tr><th scope="row">其他格式</th><td><strong>GIF、WebP、JPG / JPEG 目前不支持导入。</strong>请在绘图软件中转换格式；把 GIF 等文件直接改名为 <code>.png</code> 并不能转换图片格式。</td></tr><tr><th scope="row">文件大小</th><td>最大 <strong>10 MiB</strong>，即 10,485,760 字节（约 10.49 MB）；APNG 的全部动画数据也计入文件大小。</td></tr><tr><th scope="row">图片尺寸</th><td>宽、高各不超过 <strong>8192 像素</strong>，且画布宽 × 高不超过 <strong>16,777,216 像素</strong>，不是把各动画帧的像素相加。例如 4096×4096 可以导入，8192×8192 会超出总像素限制。</td></tr><tr><th scope="row">显示尺寸</th><td>最长边超过 <strong>830 逻辑像素</strong>时等比缩小；较小图片按原始宽高设置逻辑显示大小。实际屏幕像素大小还受系统显示缩放影响，保存的原文件不会被缩小或重写。</td></tr><tr><th scope="row">透明背景</th><td>建议保留透明通道，只显示准星图案。透明背景不是强制要求。</td></tr></tbody></table>
+            <div class="note">制作动画准星时，每一帧应使用相同画布大小，并让瞄准点保持在同一像素位置。可以改变颜色或外圈图案，避免瞄准点随动画跳动。上面的文件大小与画布尺寸限制也适用于 APNG。</div>
           </section>
           <section class="manual-section" id="alignment">
             <div class="section-heading"><span class="number">02</span><h2>中心点，差一点也不同</h2></div>
@@ -64,7 +66,7 @@
             <div class="section-heading"><span class="number">05</span><h2>遇到一点小问题</h2></div>
             <details><summary>为什么准星周围有白底或棋盘格？</summary><p>这些背景可能已经画进 PNG。请在绘图软件中移除背景，并以透明 PNG 导出。文件扩展名是 PNG，并不代表内容一定透明。</p></details>
             <details><summary>为什么图片居中了，瞄准点还是有偏差？</summary><p>居中依据的是整张画布。画布尺寸、图案在画布中的位置，以及游戏分辨率和显示缩放都会影响最终结果。按上面的图解，对照游戏内置准星或狙击镜中心校准。</p></details>
-            <details><summary>图片大小有限制吗？能放大缩小吗？</summary><p>文件不超过 10 MiB，任一边不超过 8192 像素，总像素不超过 16,777,216。图片按原始宽高设置逻辑显示大小，最长边超过 830 时等比缩小；实际屏幕像素大小还受系统显示缩放影响。目前没有尺寸滑杆；请在绘图软件中先做好合适的大小。</p></details>
+            <details><summary>图片大小有限制吗？能放大缩小吗？</summary><p>文件和尺寸上限见前面的<a href="#start">图片规格表</a>。超过导入上限会提示错误；最长边超过 830 逻辑像素则会等比缩小显示。目前没有尺寸滑杆，请在绘图软件中先做好合适的大小。</p></details>
             <details><summary>锁定后拖不动，怎么重新调整？</summary><p>回到「挂件 → 自定义准星」菜单解除锁定，再调整位置。校准完成后可以重新锁定。</p></details>
           </section>
           <a class="next-guide" href="../custom-pets/"><div><small>继续翻一页</small><strong>让自己的角色住进桌面</strong></div><span aria-hidden="true">→</span></a>
