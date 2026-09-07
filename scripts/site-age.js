@@ -2,109 +2,92 @@
     const SECONDS_PER_MINUTE = 60;
     const SECONDS_PER_HOUR = SECONDS_PER_MINUTE * 60;
     const SECONDS_PER_DAY = SECONDS_PER_HOUR * 24;
-
-    function padZero(data) {
-        return data < 10 ? '0' + data : data.toString();
-    }
-
-    // 判断是否为闰年
-    function isLeapYear(year) {
-        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
-    }
-
-    // 计算两个日期之间的闰年数量
-    function getLeapYearCount(startDate, endDate) {
-        let leapYears = 0;
-        for (let year = startDate.getFullYear(); year <= endDate.getFullYear(); year++) {
-            if (isLeapYear(year)) {
-                // 确保闰年2月29日在日期范围内
-                const leapDay = new Date(Date.UTC(year, 1, 29));
-                if (leapDay >= startDate && leapDay <= endDate) {
-                    leapYears++;
-                }
-            }
-        }
-        return leapYears;
-    }
-
-    // 精确计算时间差的函数
-    function calculateTimeDifference(startDate) {
-        const now = new Date();
-
-        let years = now.getFullYear() - startDate.getFullYear();
-        let months = now.getMonth() - startDate.getMonth();
-        let days = now.getDate() - startDate.getDate();
-        let hours = now.getHours() - startDate.getHours();
-        let minutes = now.getMinutes() - startDate.getMinutes();
-        let seconds = now.getSeconds() - startDate.getSeconds();
-
-        // 处理负数情况，考虑闰年
-        if (seconds < 0) {
-            minutes--;
-            seconds += 60;
-        }
-        if (minutes < 0) {
-            hours--;
-            minutes += 60;
-        }
-        if (hours < 0) {
-            days--;
-            hours += 24;
-        }
-        if (days < 0) {
-            months--;
-            // 获取上个月的天数，考虑闰年
-            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-            days += prevMonth.getDate();
-        }
-        if (months < 0) {
-            years--;
-            months += 12;
-        }
-
-        // 调整天数以考虑闰年
-        const leapDays = getLeapYearCount(startDate, now);
-        days += leapDays;
-
-        return [years, days, hours, minutes, seconds];
-    }
-
-    // 计算成为百年老站还需要的时间
-    function calculateYearsToCentenary() {
-        const now = new Date();
-        const startDate = new Date(Date.UTC(2011, 8, 20, 11, 13, 32));
-        const centenaryDate = new Date(startDate.getTime());
-        centenaryDate.setFullYear(startDate.getFullYear() + 100);
-
-        // 计算精确的时间差，考虑闰年
-        const timeDiff = centenaryDate.getTime() - now.getTime();
-        const daysToCentenary = Math.floor(timeDiff / (1000 * SECONDS_PER_DAY));
-
-        // 考虑闰年的影响
-        const leapYears = getLeapYearCount(now, centenaryDate);
-        const yearsToCentenary = Math.floor((daysToCentenary - leapYears) / 365);
-
-        return padZero(yearsToCentenary);
-    }
-
-    // 更新运行时间
-    function updateElapsedTime() {
-        const startDate = new Date(Date.UTC(2011, 8, 20, 11, 13, 32));
-        const elapsedTime = calculateTimeDifference(startDate);
-        const elapsedTimeHtml = `<span class="num">${elapsedTime[0]}</span>年<span class="num">${elapsedTime[1]}</span>天<span class="num">${padZero(elapsedTime[2])}</span>时<span class="num">${padZero(elapsedTime[3])}</span>分<span class="num">${padZero(elapsedTime[4])}</span>秒`;
-
-        const timeElement = document.getElementById("htmer_time");
-        if (timeElement) {
-            timeElement.innerHTML = elapsedTimeHtml;  // 注意这里使用 innerHTML 而不是 textContent
-        }
-    }
-
-    // 初始化
+    const startDate = new Date(Date.UTC(2011, 8, 20, 11, 13, 32));
+    const centenaryDate = new Date(Date.UTC(2111, 8, 20, 11, 13, 32));
+    const timeElement = document.getElementById('htmer_time');
     const yearsElement = document.getElementById('htmer_time2');
-    if (yearsElement) {
-        yearsElement.innerHTML = `<span class="num">${calculateYearsToCentenary()}</span>`;
+
+    if (!timeElement && !yearsElement) return;
+
+    function padZero(value) {
+        return String(value).padStart(2, '0');
     }
 
-    // 定时更新
+    function anniversary(date, year) {
+        const result = new Date(date.getTime());
+        result.setUTCFullYear(year);
+        return result;
+    }
+
+    function calculateTimeDifference(now) {
+        let years = now.getUTCFullYear() - startDate.getUTCFullYear();
+        let lastAnniversary = anniversary(startDate, startDate.getUTCFullYear() + years);
+
+        if (lastAnniversary > now) {
+            years--;
+            lastAnniversary = anniversary(startDate, startDate.getUTCFullYear() + years);
+        }
+
+        // 日期相减已包含闰日；剩余月份统一折算为最近周年之后的天数。
+        const seconds = Math.floor((now.getTime() - lastAnniversary.getTime()) / 1000);
+        return [
+            years,
+            Math.floor(seconds / SECONDS_PER_DAY),
+            Math.floor(seconds / SECONDS_PER_HOUR) % 24,
+            Math.floor(seconds / SECONDS_PER_MINUTE) % 60,
+            seconds % 60,
+        ];
+    }
+
+    function calculateYearsToCentenary(now) {
+        if (now >= centenaryDate) return 0;
+
+        let years = centenaryDate.getUTCFullYear() - now.getUTCFullYear();
+        const boundary = anniversary(centenaryDate, centenaryDate.getUTCFullYear() - years);
+        if (boundary < now) years--;
+        return years;
+    }
+
+    function createNumber(parent) {
+        const number = document.createElement('span');
+        number.className = 'num';
+        parent.append(number);
+        return number;
+    }
+
+    const elapsedNumbers = [];
+    if (timeElement) {
+        timeElement.replaceChildren();
+        ['年', '天', '时', '分', '秒'].forEach(function (unit) {
+            elapsedNumbers.push(createNumber(timeElement));
+            timeElement.append(unit);
+        });
+    }
+
+    let centenaryNumber = null;
+    if (yearsElement) {
+        yearsElement.replaceChildren();
+        centenaryNumber = createNumber(yearsElement);
+    }
+
+    function updateNumber(number, value) {
+        if (number.textContent !== value) number.textContent = value;
+    }
+
+    function updateElapsedTime() {
+        // 本机时钟早于建站时间时显示零，避免产生负数年和负数余数。
+        const now = new Date(Math.max(Date.now(), startDate.getTime()));
+        const elapsed = calculateTimeDifference(now);
+
+        elapsedNumbers.forEach(function (number, index) {
+            updateNumber(number, index < 2 ? String(elapsed[index]) : padZero(elapsed[index]));
+        });
+
+        if (centenaryNumber) {
+            updateNumber(centenaryNumber, padZero(calculateYearsToCentenary(now)));
+        }
+    }
+
+    updateElapsedTime();
     setInterval(updateElapsedTime, 1000);
 })();

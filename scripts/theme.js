@@ -4,6 +4,7 @@
     var isDarkMode = false;
     var userToggled = false;
     var transitionTimer = null;
+    var autoThemeTimer = null;
     var THEME_TRANSITION_MS = 2000;
 
     function getThemeColorMeta() {
@@ -52,7 +53,32 @@
         }
 
         var nextMode = getAutoDarkMode();
-        setTheme(nextMode, nextMode !== isDarkMode);
+        if (nextMode !== isDarkMode) setTheme(nextMode, true);
+        scheduleAutoTheme();
+    }
+
+    function scheduleAutoTheme() {
+        window.clearTimeout(autoThemeTimer);
+        autoThemeTimer = null;
+        if (userToggled || document.hidden) return;
+
+        var now = new Date();
+        var nextBoundary = new Date(now.getTime());
+        var hour = now.getHours();
+
+        if (hour < 7) {
+            nextBoundary.setHours(7, 0, 0, 0);
+        } else if (hour < 18) {
+            nextBoundary.setHours(18, 0, 0, 0);
+        } else {
+            nextBoundary.setDate(nextBoundary.getDate() + 1);
+            nextBoundary.setHours(7, 0, 0, 0);
+        }
+
+        autoThemeTimer = window.setTimeout(
+            checkTimeAndUpdateTheme,
+            Math.max(1, nextBoundary.getTime() - now.getTime())
+        );
     }
 
     function bindToggle() {
@@ -61,6 +87,8 @@
         if (darkModeToggle) {
             darkModeToggle.onclick = function () {
                 userToggled = true;
+                window.clearTimeout(autoThemeTimer);
+                autoThemeTimer = null;
                 setTheme(!isDarkMode, true);
             };
         }
@@ -77,5 +105,14 @@
         bindToggle();
     }
 
-    window.setInterval(checkTimeAndUpdateTheme, 1000);
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            window.clearTimeout(autoThemeTimer);
+            autoThemeTimer = null;
+        } else {
+            checkTimeAndUpdateTheme();
+        }
+    });
+
+    scheduleAutoTheme();
 })();

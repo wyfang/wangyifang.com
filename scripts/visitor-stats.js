@@ -1,81 +1,37 @@
-window.addEventListener('load', function () {
-    // 提取并替换小部件内容的函数
-    function extractAndReplaceWidgetContent() {
-        var widget = document.querySelector('#custom-widget .la-widget');
-        if (widget) {
-            var stats = {
-                '今日访问人数': '',
-                '今日访问量': '',
-                '昨日访问人数': '',
-                '昨日访问量': '',
-                '本月访问量': '',
-                '总访问量': ''
-            };
+(function () {
+    const container = document.getElementById('custom-widget');
+    if (!container) return;
 
-            widget.querySelectorAll('span').forEach(function (span) {
-                var spanText = span.textContent.trim().replace(/\s+/g, ' '); // 去掉多余空格
+    function renderStats() {
+        const widget = container.querySelector('.la-widget');
+        if (!widget) return;
 
-                // 匹配并提取统计信息
-                Object.keys(stats).forEach(function (key) {
-                    var regex = new RegExp(key + '\\s*(\\d+[\\,\\d]*)');
-                    var match = spanText.match(regex);
-                    if (match) {
-                        stats[key] = match[1];
-                    }
-                });
-            });
-
-            // 在获取到“总访问量”数据后进行加 97774 操作-验证OK
-            if (stats['总访问量']) {
-                // 去掉数字中的逗号并转为整数，进行加法运算后再加回逗号
-                let total = stats['总访问量'].replace(/,/g, ''); // 去除逗号
-                total = parseInt(total, 10) + 97774;  // 加上 97774
-                stats['总访问量'] = total.toLocaleString(); // 转回带逗号的格式
-            }
-            // 在获取到“总访问量”数据后进行加 97774 操作-验证OK
-
-            // 生成最终的文本内容，每个统计项之间添加两个不间断空格
-            var textContent = '';
-            Object.keys(stats).forEach(function (key) {
-                if (stats[key]) {
-                    textContent += key + stats[key] + '&nbsp;&nbsp;';
-                }
-            });
-
-            // 创建一个新的 div 元素替换原有小部件内容
-            var newContent = document.createElement('div');
-            newContent.innerHTML = textContent.trim(); // 去掉末尾多余的空格
-
-            // 替换原有小部件内容
-            var customWidget = document.getElementById('custom-widget');
-            customWidget.innerHTML = '';
-            customWidget.appendChild(newContent);
-        }
-    }
-
-    // 使用 MutationObserver 监控 la-widget 的加载状态
-    var observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            if (mutation.addedNodes.length > 0) {
-                mutation.addedNodes.forEach(function (node) {
-                    if (node.nodeType === 1 && node.classList.contains('la-widget')) {
-                        // 小部件加载完成后提取并替换内容
-                        extractAndReplaceWidgetContent();
-                    }
-                });
-            }
+        const labels = ['今日访问人数', '今日访问量', '昨日访问人数', '昨日访问量', '本月访问量', '总访问量'];
+        const content = widget.textContent.replace(/\s+/g, ' ');
+        const stats = labels.map(label => {
+            const match = content.match(new RegExp(label + '\\s*([\\d,]+)'));
+            if (!match) return null;
+            const value = label === '总访问量'
+                ? (Number(match[1].replace(/,/g, '')) + 97774).toLocaleString()
+                : match[1];
+            return label + value;
         });
-    });
+        // 等待小部件插入完整数据后再替换，不让空的中间节点结束监听。
+        if (stats.some(value => value === null)) return;
 
-    // 监听整个文档的变化
-    observer.observe(document, { childList: true, subtree: true });
-
-    // 页面加载完成后直接执行一次提取操作
-    extractAndReplaceWidgetContent();
-
-    // 去除#custom-widget的display:none样式
-    var customWidget = document.getElementById('custom-widget');
-    if (customWidget) {
-        customWidget.style.display = '';
+        observer.disconnect();
+        const output = document.createElement('div');
+        output.textContent = stats.join('\u00a0\u00a0');
+        container.replaceChildren(output);
+        container.style.display = '';
     }
-});
+
+    const observer = new MutationObserver(renderStats);
+    observer.observe(container, { childList: true, subtree: true, characterData: true });
+    const script = document.getElementById('LA-DATA-WIDGET');
+    if (script) {
+        script.addEventListener('load', renderStats, { once: true });
+        script.addEventListener('error', () => observer.disconnect(), { once: true });
+    }
+    renderStats();
+})();

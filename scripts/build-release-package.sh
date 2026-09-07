@@ -56,6 +56,7 @@ for relative_path in \
     img/wifi-cursor-text.svg \
     img/lottie/glint.json \
     scripts/avatar.js \
+    scripts/bodymovin.js \
     LICENSE \
     LICENSE_SCOPE.md \
     NOTICE \

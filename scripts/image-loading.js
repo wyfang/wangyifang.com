@@ -1,4 +1,7 @@
 (function () {
+    var linksContainer = document.querySelector('.wifi-links');
+    if (!linksContainer) return;
+
     var handledImages = new WeakSet();
     var revealingImages = new WeakSet();
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -95,7 +98,7 @@
         }
     }
 
-    document.querySelectorAll('.wifi-link-img img').forEach(handleImg);
+    linksContainer.querySelectorAll('.wifi-link-img img').forEach(handleImg);
 
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
@@ -108,5 +111,5 @@
         });
     });
 
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(linksContainer, { childList: true, subtree: true });
 })();

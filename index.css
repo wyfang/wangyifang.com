@@ -9,11 +9,14 @@
 
 @font-face {
     font-family: 'Google Sans Flex';
-    src: url('fonts/GoogleSansFlex.ttf') format('truetype');
+    src: url('fonts/GoogleSansFlex.woff2') format('woff2');
+    font-weight: 1 1000;
+    font-stretch: 25% 151%;
+    font-display: swap;
 }
 
 html {
-    font-family: 'Google Sans Flex';
+    font-family: 'Google Sans Flex', system-ui, sans-serif;
 }
 
 :root {
@@ -485,7 +488,9 @@ a.wifi-text-qr-text:hover {
     filter: var(--wifi-tag-icon-hover-filter);
 }
 
-.wifi-text-qr:hover .wifi-qr {
+.wifi-text-qr:not(.is-qr-managed):hover .wifi-qr,
+.wifi-text-qr:not(.is-qr-managed):focus-within .wifi-qr,
+.wifi-text-qr.is-qr-open .wifi-qr {
     opacity: 1;
     top: 23px;
     left: 50%;
@@ -609,4 +614,71 @@ a.wifi-text-qr-text:hover {
 /*鼠标悬浮在滚动条上的主干部分*/
 .wifi-scroll::-webkit-scrollbar-track:hover {
     background-color: #ffffff00;
+}
+
+/* 原生按钮沿用标签和页脚外观。 */
+button.wifi-text,
+button.wifi-text-qr-text,
+button.wifi-foot-link {
+    appearance: none;
+    font-family: inherit;
+    text-align: inherit;
+    user-select: text;
+}
+
+button.wifi-foot-link {
+    background: transparent;
+    line-height: normal;
+}
+
+button.wifi-foot-link:hover {
+    background: var(--wifi-foot-link-hover-bg);
+}
+
+.wifi-face-wifi:focus-visible,
+.wifi-link a:focus-visible,
+.wifi-text:focus-visible,
+.wifi-text-qr-text:focus-visible,
+.wifi-foot-link:focus-visible,
+.wifi-foot-links a:focus-visible {
+    outline: 2px solid var(--wifi-tag-color);
+    outline-offset: 4px;
+}
+
+.wifi-copy-feedback {
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    bottom: calc(24px + env(safe-area-inset-bottom));
+    max-width: calc(100vw - 32px);
+    padding: 10px 18px;
+    border: 1px solid #ffffff24;
+    border-radius: 24px;
+    background: #17212beF;
+    color: #fff;
+    box-shadow: 0 6px 24px #00000026;
+    font: 500 14px/1.5 'Google Sans Flex', system-ui, sans-serif;
+    text-align: center;
+    word-break: normal;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, 6px);
+    transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.wifi-copy-feedback.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+html.dark-mode .wifi-copy-feedback {
+    background: #ecf1f3;
+    color: #17212b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wifi-copy-feedback,
+    .wifi-qr {
+        transition: none;
+    }
 }

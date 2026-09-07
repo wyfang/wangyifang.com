@@ -21,11 +21,11 @@
     <script src="scripts/background.js?v=20260818-4"></script>
     <meta name="theme-color" content="#ECF1F3">
     <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/favicon/manifest.json">
-    <link rel="preload" href="fonts/GoogleSansFlex.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/GoogleSansFlex.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body class="wifi-scroll" ondragstart="return false">
@@ -37,18 +37,17 @@
     </div>
     <div class="wifi-body">
         <div class="wifi-content">
-            <div class="wifi-face-wifi" onclick="window.open('https://blog.wangyifang.com')">
+            <a class="wifi-face-wifi" href="https://blog.wangyifang.com" target="_blank" rel="noopener" aria-label="访问 Wi-Fi 的博客">
                 <div id="animated-avatar" class="wifi-avatar-host">
                     <img class="wifi-avatar-media" src="img/face.svg?v=20260817"
                         alt="This is my avatar, I use this avatar in most places.">
                 </div>
-            </div>
+            </a>
             <!-- 将头像“wifi-face-wifi”改成”wifi-face“后头像将在夜间模式不反色 -->
             <div class="wifi-txt"><img src="img/txt.svg" alt="I'm Wi-Fi welcome"> </div>
             <div class="wifi-links">
                 <div class="wifi-link">
                     <div id="glint"></div>
-                    <script src="img/lottie/glint.js"></script>
                     <a href="http://taobao.wangyifang.com" target="_blank" rel="noopener">
                         <div class="wifi-link-img">
                             <img src="img/dataoke.svg" alt="">
@@ -204,64 +203,64 @@
                 <!--        <div></div>-->
                 <!--    </div>-->
                 <!--</div>-->
-                <div class="wifi-text" wificlick2copy="AK6QG-QLBE"><img class="wifi-url1" src="img/sm/csgo.svg"
-                        alt=""><span class="no-select">Friend Code:&nbsp;</span><span>AK6QG-QLBE</span></div>
+                <button type="button" class="wifi-text" wificlick2copy="AK6QG-QLBE"><img class="wifi-url1" src="img/sm/csgo.svg"
+                        alt=""><span class="no-select">Friend Code:&nbsp;</span><span>AK6QG-QLBE</span></button>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="320252775"><img class="wifi-url1"
-                            src="img/sm/qq-group-steam.svg" alt=""><span class="no-select">Steam Q群:&nbsp;</span><span>320252775</span></div>
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="320252775"><img class="wifi-url1"
+                            src="img/sm/qq-group-steam.svg" alt=""><span class="no-select">Steam Q群:&nbsp;</span><span>320252775</span></button>
                     <div class="wifi-qr"><img src="img/qr/qq-group-steam.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="10255199"><img class="wifi-url1" src="img/sm/qq.svg"
-                            alt=""><span class="no-select">QQ:&nbsp;</span><span>10255199</span></div>
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="10255199"><img class="wifi-url1" src="img/sm/qq.svg"
+                            alt=""><span class="no-select">QQ:&nbsp;</span><span>10255199</span></button>
                     <div class="wifi-qr"><img src="img/qr/qq.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="ValveSoft"><img class="wifi-url1"
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="ValveSoft"><img class="wifi-url1"
                             src="img/sm/wechat.svg" alt="">
                             <span class="no-select">Wechat:&nbsp;</span><span>ValveSoft</span>
-                    </div>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/wechat.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text"><img class="wifi-url1" src="img/sm/wechat-sticker.svg"
-                            alt="">微信表情艺术家主页</div>
+                    <button type="button" class="wifi-text-qr-text"><img class="wifi-url1" src="img/sm/wechat-sticker.svg"
+                            alt="">微信表情艺术家主页</button>
                     <div class="wifi-qr"><img src="img/qr/wechat-sticker.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text"><img class="wifi-url1" src="img/sm/wechatvideo.svg" alt=""><span class="no-select">视频号:&nbsp;</span><span>CNCS</span>
-                    </div>
+                    <button type="button" class="wifi-text-qr-text"><img class="wifi-url1" src="img/sm/wechatvideo.svg" alt=""><span class="no-select">视频号:&nbsp;</span><span>CNCS</span>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/wechatvideo.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="WYFANG"><img class="wifi-url1"
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="WYFANG"><img class="wifi-url1"
                             src="img/sm/wechatmp.svg" alt=""><span class="no-select">公众号:&nbsp;</span><span>WYFANG</span>
-                    </div>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/wechatmp.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="LHKJ"><img class="wifi-url1" src="img/sm/line.svg"
-                            alt=""><span class="no-select">LINE:&nbsp;</span><span>LHKJ</span></div>
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="LHKJ"><img class="wifi-url1" src="img/sm/line.svg"
+                            alt=""><span class="no-select">LINE:&nbsp;</span><span>LHKJ</span></button>
                     <div class="wifi-qr"><img src="img/qr/line.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="OneYifang"><img class="wifi-url1"
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="OneYifang"><img class="wifi-url1"
                             src="img/sm/messenger.svg" alt=""><span class="no-select">Messenger:&nbsp;</span><span>OneYifang</span>
-                    </div>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/messenger.jpg" alt="">
                         <div></div>
                     </div>
@@ -275,107 +274,107 @@
                     </div>
                 </div> -->
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="ValveSoft"><img class="wifi-url1"
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="ValveSoft"><img class="wifi-url1"
                             src="img/sm/douyin.svg" alt=""><span class="no-select">抖音:&nbsp;</span><span>ValveSoft</span>
-                    </div>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/douyin.jpg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="Profile"><img class="wifi-url1"
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="Profile"><img class="wifi-url1"
                             src="img/sm/duoshan.svg" alt=""><span class="no-select">多闪:&nbsp;</span><span>Profile</span>
-                    </div>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/duoshan.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="USER"><img class="wifi-url1" src="img/sm/zidan.svg"
-                            alt=""><span class="no-select">子弹短信:&nbsp;</span><span>USER</span></div>
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="USER"><img class="wifi-url1" src="img/sm/zidan.svg"
+                            alt=""><span class="no-select">子弹短信:&nbsp;</span><span>USER</span></button>
                     <div class="wifi-qr"><img src="img/qr/zidan.svg" alt="">
                         <div></div>
                     </div>
                 </div>
-                <div class="wifi-text" wificlick2copy="NEXON"><img class="wifi-url1" src="img/sm/mpopkart.svg"
-                        alt=""><span class="no-select">跑跑手Q一区:&nbsp;</span><span>NEXON</span></div>
+                <button type="button" class="wifi-text" wificlick2copy="NEXON"><img class="wifi-url1" src="img/sm/mpopkart.svg"
+                        alt=""><span class="no-select">跑跑手Q一区:&nbsp;</span><span>NEXON</span></button>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="CNCS"><img class="wifi-url1" src="img/sm/zepeto.svg"
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="CNCS"><img class="wifi-url1" src="img/sm/zepeto.svg"
                             alt=""><span class="no-select">ZEPETO:&nbsp;</span><span>CNCS</span>
-                    </div>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/zepeto.svg" alt="">
                         <div></div>
                     </div>
                 </div>
-                <div class="wifi-text" wificlick2copy="WYFANG#1910"><img class="wifi-url1" src="img/sm/blizzard.svg"
+                <button type="button" class="wifi-text" wificlick2copy="WYFANG#1910"><img class="wifi-url1" src="img/sm/blizzard.svg"
                         alt=""><span class="no-select">Blizzard:&nbsp;</span><span>WYFANG#1910</span>
-                </div>
-                <div class="wifi-text" wificlick2copy="CSGO#51869"><img class="wifi-url1" src="img/sm/blizzard.svg"
+                </button>
+                <button type="button" class="wifi-text" wificlick2copy="CSGO#51869"><img class="wifi-url1" src="img/sm/blizzard.svg"
                         alt=""><span class="no-select">暴雪战网:&nbsp;</span><span>CSGO#51869</span>
-                </div>
-                <div class="wifi-text" wificlick2copy="VIP#5096093"><img class="wifi-url1" src="img/sm/activision.svg"
-                        alt=""><span class="no-select">Activision:&nbsp;</span><span>VIP#5096093</span></div>
-                <div class="wifi-text" wificlick2copy="CNCSGO"><img class="wifi-url1" src="img/sm/origin.svg"
-                        alt=""><span class="no-select">EA App(Origin):&nbsp;</span><span>CNCSGO</span></div>
-                <div class="wifi-text" wificlick2copy="WYFANG"><img class="wifi-url1" src="img/sm/uplay.svg"
-                        alt=""><span class="no-select">Uplay ID:&nbsp;</span><span>WYFANG</span></div>
-                <div class="wifi-text" wificlick2copy="CNCSGO"><img class="wifi-url1" src="img/sm/epic.svg" alt=""><span class="no-select">Epic Games:&nbsp;</span><span>CNCSGO</span></div>
-                <div class="wifi-text" wificlick2copy="SW-5938-6842-7676"><img class="wifi-url1" src="img/sm/nsfc.svg"
-                        alt=""><span class="no-select">Nintendo Switch:&nbsp;</span><span>SW-5938-6842-7676</span></div>
+                </button>
+                <button type="button" class="wifi-text" wificlick2copy="VIP#5096093"><img class="wifi-url1" src="img/sm/activision.svg"
+                        alt=""><span class="no-select">Activision:&nbsp;</span><span>VIP#5096093</span></button>
+                <button type="button" class="wifi-text" wificlick2copy="CNCSGO"><img class="wifi-url1" src="img/sm/origin.svg"
+                        alt=""><span class="no-select">EA App(Origin):&nbsp;</span><span>CNCSGO</span></button>
+                <button type="button" class="wifi-text" wificlick2copy="WYFANG"><img class="wifi-url1" src="img/sm/uplay.svg"
+                        alt=""><span class="no-select">Uplay ID:&nbsp;</span><span>WYFANG</span></button>
+                <button type="button" class="wifi-text" wificlick2copy="CNCSGO"><img class="wifi-url1" src="img/sm/epic.svg" alt=""><span class="no-select">Epic Games:&nbsp;</span><span>CNCSGO</span></button>
+                <button type="button" class="wifi-text" wificlick2copy="SW-5938-6842-7676"><img class="wifi-url1" src="img/sm/nsfc.svg"
+                        alt=""><span class="no-select">Nintendo Switch:&nbsp;</span><span>SW-5938-6842-7676</span></button>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="#292VVPUQ"><img class="wifi-url1"
-                            src="img/sm/brawlstars.svg" alt=""><span class="no-select">Brawl Stars:&nbsp;</span><span>#292VVPUQ</span></div>
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="#292VVPUQ"><img class="wifi-url1"
+                            src="img/sm/brawlstars.svg" alt=""><span class="no-select">Brawl Stars:&nbsp;</span><span>#292VVPUQ</span></button>
                     <div class="wifi-qr"><img src="img/qr/brawlstars.svg" alt="">
                         <div></div>
                     </div>
                 </div>
-                <div class="wifi-text" wificlick2copy="CSGO#888"><img class="wifi-url1" src="img/sm/valorant.svg"
+                <button type="button" class="wifi-text" wificlick2copy="CSGO#888"><img class="wifi-url1" src="img/sm/valorant.svg"
                         alt=""><span class="no-select">Valorant (HK):&nbsp;</span><span>CSGO#888</span>
-                </div>
-                <div class="wifi-text" wificlick2copy="CSGO#34075"><img class="wifi-url1" src="img/sm/valorant-cn.svg"
+                </button>
+                <button type="button" class="wifi-text" wificlick2copy="CSGO#34075"><img class="wifi-url1" src="img/sm/valorant-cn.svg"
                         alt=""><span class="no-select">无畏契约:&nbsp;</span><span>CSGO#34075</span>
-                </div>
+                </button>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="ONEYIFANG"><img class="wifi-url1"
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="ONEYIFANG"><img class="wifi-url1"
                             src="img/sm/keep.svg" alt=""><span class="no-select">Keep:&nbsp;</span><span>ONEYIFANG</span>
-                    </div>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/keep.svg" alt="">
                         <div></div>
                     </div>
                 </div>
-                <div class="wifi-text" wificlick2copy="valvesoft"><img class="wifi-url1" src="img/sm/discord.svg"
-                        alt=""><span class="no-select">Discord:&nbsp;</span><span>valvesoft</span></div>
+                <button type="button" class="wifi-text" wificlick2copy="valvesoft"><img class="wifi-url1" src="img/sm/discord.svg"
+                        alt=""><span class="no-select">Discord:&nbsp;</span><span>valvesoft</span></button>
                 <div class="wifi-text"><img class="wifi-url1" src="img/sm/googlevoice.svg" alt=""><span class="no-select">Google Voice:&nbsp;</span><span>+1 774-515-0088 / +1 507-400-0571</span></div>
-                <div class="wifi-text" wificlick2copy="noreply@steamcommunity.cn"><img class="wifi-url1"
-                        src="img/sm/mail.svg" alt=""><span class="no-select">E-mail:&nbsp;</span><span>noreply@steamcommunity.cn</span></div>
+                <button type="button" class="wifi-text" wificlick2copy="noreply@steamcommunity.cn"><img class="wifi-url1"
+                        src="img/sm/mail.svg" alt=""><span class="no-select">E-mail:&nbsp;</span><span>noreply@steamcommunity.cn</span></button>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="zhifubao@alipay.alibaba.wangyifang.com"><img
-                            class="wifi-url1" src="img/sm/alipay.svg" alt=""><span class="no-select">Alipay add friend:&nbsp;</span><span>zhifubao@alipay.alibaba.wangyifang.com</span></div>
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="zhifubao@alipay.alibaba.wangyifang.com"><img
+                            class="wifi-url1" src="img/sm/alipay.svg" alt=""><span class="no-select">Alipay add friend:&nbsp;</span><span>zhifubao@alipay.alibaba.wangyifang.com</span></button>
                     <div class="wifi-qr"><img src="img/qr/alipay.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text" wificlick2copy="853117694"><img class="wifi-url1"
+                    <button type="button" class="wifi-text-qr-text" wificlick2copy="853117694"><img class="wifi-url1"
                             src="img/sm/red-envelope.svg" alt="">Alipay
                         Red Envelope
-                    </div>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/red-envelope.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text"><img class="wifi-url1" src="img/sm/alipayforpay.svg" alt="">Alipay
+                    <button type="button" class="wifi-text-qr-text"><img class="wifi-url1" src="img/sm/alipayforpay.svg" alt="">Alipay
                         for Pay
-                    </div>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/alipayforpay.svg" alt="">
                         <div></div>
                     </div>
                 </div>
                 <div class="wifi-text-qr">
-                    <div class="wifi-text-qr-text"><img class="wifi-url1" src="img/sm/wechatpay.svg" alt="">Wechat for
+                    <button type="button" class="wifi-text-qr-text"><img class="wifi-url1" src="img/sm/wechatpay.svg" alt="">Wechat for
                         Pay
-                    </div>
+                    </button>
                     <div class="wifi-qr"><img src="img/qr/wechatpay.svg" alt="">
                         <div></div>
                     </div>
@@ -435,15 +434,15 @@
                 <a href="https://blog.wangyifang.com/mywebupdate/" target="_blank" rel="noopener">
                     <div class="wifi-foot-link">UPDATES</div>
                 </a>
-                <div id="darkModeToggle" class="wifi-foot-link" style="cursor: pointer;">⋅⋅⋅</div>
+                <button type="button" id="darkModeToggle" class="wifi-foot-link">⋅⋅⋅</button>
             </div>
             <div class="wifi-copyright">Copyright © 2011 - 现在 Wi-Fi. All Rights Reserved.</div>
             <div class="wifi-copyright">本网站 ( ucfan.cn / wangyifang.com ) 已经稳定运行了: <span
-                    id="htmer_time"></span>，离成为百年老站还有<span id="htmer_time2"></span> | Hosted by Sunway TaihuLight</div>
+                    id="htmer_time"></span>，离成为百年老站还有<span id="htmer_time2"></span>年 | Hosted by Sunway TaihuLight</div>
 
             <!--51.la统计-->
             <div id="custom-widget" class="wifi-copyright" style="display: none;">
-                <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8"
+                <script async id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8"
                     src="https://v6-widget.51.la/v6/KRC2Iq7JDebE74Fo/quote.js?theme=#000000,#000000,#000000,#000000,,#000000,12&f=12&display=0,1,1,1,1,1,1,1">
                     </script>
             </div>
@@ -511,11 +510,12 @@
             <div></div>
         </div>
     </div>
+    <div id="copy-feedback" class="wifi-copy-feedback" role="status" aria-live="polite" aria-atomic="true"></div>
     <script src="scripts/click-to-copy.js"></script>
     <script src="scripts/image-loading.js"></script>
     <script src="scripts/site-age.js"></script>
     <script type="module" src="scripts/avatar-random.js?v=20260817"></script>
-    <script src="scripts/bodymovin.js"></script> 
+    <script src="img/lottie/glint.js"></script>
 </body>
 
 </html>
