@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="为 Wi-Fi 制作自己的桌面宠物：准备序列图、填写配置、放入账号目录，让喜欢的角色住进桌面。">
+  <meta name="description" content="为 Wi-Fi 制作自己的桌面宠物：用 hatch-pet skill 辅助生成角色与动画，或自己准备序列图，搭配配置放入账号目录。">
   <title>自定义宠物 · Wi-Fi 游戏手册</title>
   <link rel="icon" type="image/png" href="../guide-assets/penguin.png">
   <link rel="stylesheet" href="../guide-assets/manual.css">
@@ -15,7 +15,7 @@
     <header class="site-header">
       <a class="brand" href="../" aria-label="Wi-Fi 首页"><img src="../guide-assets/penguin.png" width="37" height="40" alt=""><span><strong>Wi-Fi</strong><small>游戏手册</small></span></a>
       <nav class="guide-nav" aria-label="主导航"><a href="../">认识 Wi-Fi</a><a href="../custom-pets/" aria-current="page">自定义宠物</a><a href="../custom-crosshairs/">自定义准星</a></nav>
-      <a class="steam-link" href="../steam-store/">在 Steam 上查看 <span aria-hidden="true">↗</span></a>
+      <a class="steam-link" href="../steam-store/" target="_blank" rel="noopener">在 Steam 上查看 <span aria-hidden="true">↗</span></a>
     </header>
     <main>
       <section class="hero" aria-labelledby="page-title">
@@ -25,19 +25,54 @@
           <p>一张序列图，一份小小的配置。<br>把你画的角色，变成每天陪伴你的桌面伙伴。</p>
           <div class="hero-bottom"><a class="button" href="#start">开始制作 <span aria-hidden="true">↓</span></a><span>从一个文件夹开始</span></div>
         </div>
-        <div class="hero-art" aria-hidden="true"><div class="pet-stage"><img class="hero-penguin" src="../guide-assets/penguin.png" width="192" height="208" alt=""></div><div class="speech">今天也一起待着吧！</div><div class="sticker">我的桌面新朋友</div><span class="star one">✦</span><span class="star two">✧</span></div>
+        <div class="pet-gallery" role="group" aria-label="自定义宠物皮肤示例">
+          <figure class="pet-portrait"><img src="../guide-assets/pet-snow-leopard.png" width="192" height="208" alt=""><figcaption>白给雪豹</figcaption></figure>
+          <figure class="pet-portrait"><img src="../guide-assets/pet-otter.png" width="192" height="208" alt=""><figcaption>水獭</figcaption></figure>
+          <figure class="pet-portrait"><img src="../guide-assets/pet-panda.png" width="192" height="208" alt=""><figcaption>熊猫</figcaption></figure>
+          <figure class="pet-portrait"><img src="../guide-assets/pet-cat.png" width="192" height="208" alt=""><figcaption>大开门</figcaption></figure>
+          <p class="pet-gallery-note">换个角色，就是新的桌面伙伴。</p>
+        </div>
       </section>
-      <nav class="chapter-strip" aria-label="快速导航"><strong>这本手册里</strong><a href="#start">准备素材</a><span>／</span><a href="#folder">放入文件夹</a><span>／</span><a href="#animation">让角色动起来</a><span>／</span><a href="#questions">常见问题</a></nav>
+      <nav class="chapter-strip" aria-label="快速导航"><strong>这本手册里</strong><a href="#start">准备素材</a><span>／</span><a href="#hatch-pet">用 AI 制作</a><span>／</span><a href="#folder">放入文件夹</a><span>／</span><a href="#animation">让角色动起来</a><span>／</span><a href="#questions">常见问题</a></nav>
       <div class="reading-layout">
-        <aside class="toc" aria-label="本页目录"><p>自定义宠物</p><a href="#start"><span>01</span>准备一个新朋友</a><a href="#folder"><span>02</span>给它一个小家</a><a href="#animation"><span>03</span>让角色动起来</a><a href="#questions"><span>04</span>遇到一点小问题</a><div class="toc-note">先用一行动画试试看。<br>熟悉之后，再添上更多表情与动作。</div></aside>
+        <aside class="toc" aria-label="本页目录"><p>自定义宠物</p><a href="#start"><span>01</span>准备一个新朋友</a><a href="#hatch-pet"><span>02</span>用 AI 制作宠物</a><a href="#folder"><span>03</span>给它一个小家</a><a href="#animation"><span>04</span>让角色动起来</a><a href="#questions"><span>05</span>遇到一点小问题</a><div class="toc-note">可以自己画，<br>也可以让 AI 帮你把想法变成角色。</div></aside>
         <div>
           <section class="manual-section" id="start">
             <div class="section-heading"><span class="number">01</span><h2>准备一个新朋友</h2></div>
             <p class="intro">一个宠物就是一个文件夹。文件夹的名字，也是它在宠物菜单里的名字。准备好下面两份文件，就可以开始了。</p>
             <ol class="steps"><li><span class="step-mark">1</span><h3>画好每一帧</h3><p>把动作按顺序排成序列图，每帧大小一致，推荐使用透明背景。</p></li><li><span class="step-mark">2</span><h3>写一份配置</h3><p>用 config.json 告诉 Wi-Fi 每帧多大、动作在哪一行、播放多快。</p></li><li><span class="step-mark">3</span><h3>放入并选择</h3><p>放进自定义宠物目录，重新打开宠物菜单，选择你的角色。</p></li></ol>
           </section>
+          <section class="manual-section" id="hatch-pet">
+            <div class="section-heading"><span class="number">02</span><h2>用 AI 制作宠物</h2></div>
+            <p class="intro">还没有序列图？OpenAI 的 <code>hatch-pet</code> skill 可以帮你生成角色、制作九行动画，再检查画面和动作。本页提供完整 skill 下载，以及适合 Wi-Fi 的配置。</p>
+            <div class="note">这套流程在支持 <code>imagegen</code> 图像生成的 Codex 环境中使用，还需要 Python、Pillow 和 jq。安装 skill 后，先让 Codex 检查依赖；普通聊天窗口不一定能执行这些步骤。</div>
+            <ol class="checklist">
+              <li><h3>下载 skill，准备一个工作文件夹</h3><p>下载 ZIP 并解压，把完整的 <code>hatch-pet</code> 文件夹放进一个在 Codex 中打开的工作目录。保留里面的脚本和参考文件。</p>
+                <div class="skill-downloads"><a class="button" href="../skills/hatch-pet.zip" download>下载 hatch-pet <span aria-hidden="true">↓</span></a><a class="inline-link" href="../skills/hatch-pet/SKILL.md" target="_blank" rel="noopener">查看 skill 说明 ↗</a></div>
+              </li>
+              <li><h3>请 Codex 安装并检查</h3><p>在这个工作目录的对话里，复制下面这句话。Codex 会按 skill 的说明确认安装位置和依赖。</p>
+                <div class="code-block"><div class="code-header"><span>安装提示词</span><button class="copy" type="button" data-copy aria-live="polite">复制提示词</button></div><pre class="prompt-text">请将当前工作目录里的 hatch-pet 文件夹安装到我的用户级 Codex skill 目录，保留完整的 SKILL.md、scripts 和 references。请按 SKILL.md 的路径约定确认脚本位置，并检查 imagegen、Python（含 Pillow）和 jq 是否可用。</pre></div>
+              </li>
+              <li><h3>说说你想要的桌面伙伴</h3><p>安装后，在新一轮对话中用 <code>$hatch-pet</code> 开始。可以附上自己的参考图，描述角色、风格和动作；下面以雪豹为例。</p>
+                <div class="code-block"><div class="code-header"><span>雪豹示例 · 按你的想法修改</span><button class="copy" type="button" data-copy aria-live="polite">复制提示词</button></div><pre class="prompt-text">$hatch-pet 帮我制作一只可爱的雪豹桌面宠物，毛茸茸、尾巴蓬松，动作轻松有趣。如有我附上的参考图，请保持角色外观一致。使用透明背景，制作完整的九行动画，单帧 192×208 像素，按 8 列×9 行排列。请检查每帧位置、动作连贯性和未使用格子的透明度，给我看预览，并交付最终的 spritesheet.webp。我会搭配 Wi-Fi 的 config.json 使用。</pre></div>
+                <p>跟随 Codex 确认角色和动画预览，完成后取用最终的 <code>spritesheet.webp</code>。本页提供的 skill 输出为 <strong>1536×1872 像素</strong>，无需为 Wi-Fi 重新裁切。</p>
+              </li>
+              <li><h3>带它来到 Wi-Fi 桌面</h3><p>下载配套 <code>config.json</code>，与最终的 <code>spritesheet.webp</code> 一起放入当前账号的 <code>pets/custom/我的雪豹/</code>。重新打开宠物菜单，选择“我的雪豹”即可。完整账号路径见<a class="inline-link" href="#folder">下一节</a>。</p>
+                <div class="skill-downloads"><a class="button" href="../guide-assets/hatch-pet-config.json" download="config.json">下载 Wi-Fi 配置 <span aria-hidden="true">↓</span></a></div>
+                <div class="code-block"><div class="code-header">我的雪豹文件夹</div><pre class="file-tree">我的雪豹/
+├── spritesheet.webp
+└── config.json</pre></div>
+                <p><strong><code>pet.json</code> 是 Codex 的宠物说明文件，不能改名替代 Wi-Fi 的 <code>config.json</code>。</strong>游戏需要的是上面这两份文件。</p>
+              </li>
+            </ol>
+            <details><summary>九行动画怎样对应 Wi-Fi？</summary><p>hatch-pet 的行号从 0 开始，Wi-Fi 的 <code>row</code> 从 1 开始。下载的配置已接好待机、鼠标经过和左右拖动等动作；想自行调整时，可对照下表。</p>
+              <table class="facts"><caption class="visually-hidden">hatch-pet 与 Wi-Fi 动画行对应</caption><thead><tr><th scope="col">Wi-Fi 行号</th><th scope="col">hatch-pet 行号</th><th scope="col">动作</th><th scope="col">帧数</th></tr></thead><tbody><tr><th scope="row">1</th><td>0</td><td>待机</td><td>6</td></tr><tr><th scope="row">2</th><td>1</td><td>向右跑</td><td>8</td></tr><tr><th scope="row">3</th><td>2</td><td>向左跑</td><td>8</td></tr><tr><th scope="row">4</th><td>3</td><td>挥手</td><td>4</td></tr><tr><th scope="row">5</th><td>4</td><td>跳跃</td><td>5</td></tr><tr><th scope="row">6</th><td>5</td><td>失败或沮丧</td><td>8</td></tr><tr><th scope="row">7</th><td>6</td><td>等待</td><td>6</td></tr><tr><th scope="row">8</th><td>7</td><td>忙碌工作</td><td>6</td></tr><tr><th scope="row">9</th><td>8</td><td>查看、思考</td><td>6</td></tr></tbody></table>
+              <p>Wi-Fi 按配置的 <code>fps</code> 播放整行动画，不读取 Codex 的逐帧时长。每行只填写实际帧数，避免把未使用的透明格也播放出来。</p>
+            </details>
+            <p class="intro">了解更多：<a class="inline-link" href="https://github.com/openai/skills/tree/main/skills/.curated/hatch-pet" target="_blank" rel="noopener">OpenAI hatch-pet 上游 ↗</a> · <a class="inline-link" href="https://developers.openai.com/codex/skills/" target="_blank" rel="noopener">Codex skills 官方说明 ↗</a></p>
+          </section>
           <section class="manual-section" id="folder">
-            <div class="section-heading"><span class="number">02</span><h2>给它一个小家</h2></div>
+            <div class="section-heading"><span class="number">03</span><h2>给它一个小家</h2></div>
             <p class="intro">在当前账号的 <code>pets/custom/</code> 目录里，新建一个以宠物名字命名的文件夹。</p>
             <div class="path-grid"><div class="path-card"><h3>macOS</h3><code>~/Library/Application Support/com.wangyifang.Wi-Fi/&lt;账号&gt;/pets/custom/</code></div><div class="path-card"><h3>Windows</h3><code>%LOCALAPPDATA%\com.wangyifang.Wi-Fi\&lt;账号&gt;\pets\custom\</code></div></div>
             <p class="intro"><code>&lt;账号&gt;</code> 指当前 Steam 账号的数字目录；未连接 Steam 时为 <code>local</code>。macOS 可在访达按 <code>⌘ ⇧ G</code> 前往路径，Windows 可在文件资源管理器地址栏输入路径。</p>
@@ -47,7 +82,7 @@
             <div class="note">序列图支持 PNG、WebP、GIF、JPG 和 JPEG。透明 PNG 或 WebP 更适合桌面宠物；图片文件名需要与配置中的 <code>spritesheet</code> 一致。</div>
           </section>
           <section class="manual-section" id="animation">
-            <div class="section-heading"><span class="number">03</span><h2>让角色动起来</h2></div>
+            <div class="section-heading"><span class="number">04</span><h2>让角色动起来</h2></div>
             <p class="intro">先从一行动画开始：下面的企鹅有 6 帧，每帧 192×208 像素，所以整张序列图是 1152×208 像素。</p>
             <figure class="sprite-figure"><img src="../guide-assets/penguin-frames.png" width="1152" height="208" alt="同一只红围巾像素企鹅的六帧动作，从左到右排列"><div class="frame-labels" aria-hidden="true"><span>第 1 帧</span><span>第 2 帧</span><span>第 3 帧</span><span>第 4 帧</span><span>第 5 帧</span><span>第 6 帧</span></div><figcaption>把一连串小动作，排成一张图。每一格保持相同尺寸，角色在格子里的位置也尽量一致。</figcaption></figure>
             <p class="intro">将下面的内容保存为 <code>config.json</code>，和对应的序列图放在一起。换成自己的素材时，记得修改帧尺寸和帧数。</p>
@@ -64,7 +99,7 @@
             <div class="small-grid"><div><h3>多一些动作</h3><p>在序列图增加新的一行，就可以为 <code>hover</code>、<code>dragLeft</code>、<code>dragRight</code> 配置不同动作。上面的最小示例中，未单独配置的状态也会使用这一行动画。</p></div><div><h3>换好后，再打开菜单</h3><p>保存文件后，重新打开宠物菜单，让 Wi-Fi 重新扫描，再选择你的宠物。每次修改都可以这样预览。</p></div></div>
           </section>
           <section class="manual-section" id="questions">
-            <div class="section-heading"><span class="number">04</span><h2>遇到一点小问题</h2></div>
+            <div class="section-heading"><span class="number">05</span><h2>遇到一点小问题</h2></div>
             <details><summary>菜单里没有出现我的宠物？</summary><p>先确认放在了当前账号的 <code>pets/custom/我的宠物/</code> 中，再检查图片文件名与配置是否一致、JSON 是否有效。最后重新打开宠物菜单。</p></details>
             <details><summary>角色被切开，或者动作跳来跳去？</summary><p>检查 <code>frame.width</code>、<code>frame.height</code> 是否为单帧尺寸，<code>row</code>、<code>frames</code> 是否与序列图对应。每一帧中的角色位置也应保持一致。</p></details>
             <details><summary>可以省略 config.json 吗？</summary><p>只有素材恰好符合内置默认布局时才适用。制作自己的角色时，建议保留配置，明确填写帧尺寸和动画布局。</p></details>

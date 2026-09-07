@@ -8,6 +8,12 @@
 
 Wi-Fi Avatar Lab 基于 Stéphane Montlouis-Calixte 的 [Bible Strong Avatar Lab](https://github.com/smontlouis/bible-strong-avatar-lab)，修改版版权归 Wi-Fi Avatar Lab 贡献者所有。生成器的对应源码见 [wifi-avatar-lab@907d8d8](https://github.com/wyfang/wifi-avatar-lab/tree/907d8d843b2cb7456a91a5303e932336f2dc35e9)；网站集成与当前导出文件的源码见本仓库。
 
+## Hatch Pet（Apache-2.0）
+
+`steamgame/Wi-Fi/skills/hatch-pet/` 与同目录的 `hatch-pet.zip` 分发 OpenAI [openai/skills 中的 hatch-pet](https://github.com/openai/skills/tree/c25113bf4c64c8dba6bfe61acf06051d79aa43f6/skills/.curated/hatch-pet)，来源提交为 `c25113bf4c64c8dba6bfe61acf06051d79aa43f6`。14 个上游文件保持原样，包含完整的 `SKILL.md`、脚本、参考资料、agent 配置和 [Apache-2.0 许可证](./steamgame/Wi-Fi/skills/hatch-pet/LICENSE.txt)。
+
+网站中的中文使用教程与 `steamgame/Wi-Fi/guide-assets/hatch-pet-config.json` 为 Wi-Fi 配套说明，不属于上游 skill 的原始内容。
+
 ## MIT
 
 下列组件按 [MIT License](./licenses/MIT.txt) 分发：

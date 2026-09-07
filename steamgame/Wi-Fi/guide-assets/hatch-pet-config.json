@@ -1,0 +1,21 @@
+{
+  "spritesheet": "spritesheet.webp",
+  "frame": { "width": 192, "height": 208 },
+  "scale": 0.5,
+  "fps": 8,
+  "interaction": { "hitMaskRow": 1, "hitMaskInflatePx": 2 },
+  "animations": {
+    "default": { "row": 1, "frames": 6, "fps": 3, "mode": "once" },
+    "hover": [
+      { "row": 4, "frames": 4, "mode": "once" },
+      { "row": 5, "frames": 5, "mode": "once" },
+      { "row": 7, "frames": 6, "mode": "once" },
+      { "row": 8, "frames": 6, "mode": "once" },
+      { "row": 9, "frames": 6, "mode": "once" }
+    ],
+    "bubble": { "row": 5, "frames": 5, "mode": "loop" },
+    "dragLeft": { "row": 3, "frames": 8, "mode": "loop" },
+    "dragRight": { "row": 2, "frames": 8, "mode": "loop" },
+    "bored": { "row": 1, "frames": 6, "fps": 2, "mode": "loop" }
+  }
+}
