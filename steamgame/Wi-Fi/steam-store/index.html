@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>前往 Steam 商店 · Wi-Fi</title>
+  <link rel="icon" type="image/png" href="../guide-assets/penguin.png">
+  <link rel="stylesheet" href="../guide-assets/manual.css">
+  <script src="../guide-assets/outbound.js" defer></script>
+  <style>
+    body { min-height: 100svh; display: grid; place-items: center; padding: 24px; }
+    main { width: min(100%, 580px); padding: 48px 28px; text-align: center; background: var(--blue); border-radius: var(--radius); }
+    .penguin { width: 74px; margin: 0 auto 24px; image-rendering: pixelated; }
+    h1 { margin: 0 0 14px; font-size: clamp(26px, 5vw, 36px); letter-spacing: -1px; }
+    p { margin: 0 0 28px; color: var(--muted); font-size: 14px; }
+    .actions { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; font-size: 13px; }
+    noscript p { margin: 24px 0 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="penguin" src="../guide-assets/penguin.png" width="74" height="80" alt="Wi-Fi 企鹅">
+    <h1>正在前往 Steam 商店</h1>
+    <p>稍等片刻，即将打开 Wi-Fi 的 Steam 商店页面。</p>
+    <div class="actions">
+      <a class="button" data-outbound href="https://store.steampowered.com/app/3736050/WiFi/">继续前往 Steam <span aria-hidden="true">↗</span></a>
+      <a href="../">返回游戏首页</a>
+    </div>
+    <noscript><p>浏览器未启用 JavaScript，请点击上面的链接继续。</p></noscript>
+  </main>
+</body>
+</html>

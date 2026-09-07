@@ -137,7 +137,9 @@ details p { color: var(--muted); margin: 13px 0 0; }
   .steam-link { display: none; }
 }
 @media (max-width: 740px) {
-  .wrap { width: min(100% - 32px, 560px); }.site-header { min-height: 92px; gap: 12px; }
+  .wrap { width: min(100% - 32px, 560px); }.site-header { min-height: 132px; gap: 12px; flex-wrap: wrap; padding-block: 18px; }
+  .site-header .steam-link { display: block; font-size: 11px; }
+  .site-header .guide-nav { order: 3; width: 100%; justify-content: center; }
   .brand { gap: 8px; }.brand strong { font-size: 20px; }.brand small { font-size: 8px; letter-spacing: 1px; }.brand img { width: 29px; height: 32px; }
   .guide-nav { gap: 2px; padding: 4px; }.guide-nav a { font-size: 11px; padding: 7px 11px; }
   .hero { grid-template-columns: 1fr; padding: 30px 27px 20px; border-radius: 27px; gap: 10px; }.hero-art { height: 230px; transform: scale(.85); width: 300px; max-width: 100%; margin: -7px auto 20px; }
