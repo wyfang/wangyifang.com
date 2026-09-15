@@ -87,7 +87,7 @@ p, span {
   cursor: url(img/wifi-cursor-text.svg) 6 13, text;
 }
 
-a, button, .wifi-cursor-pointer, .wifi-face-wifi, .wifi-foot-links {
+a, button, .wifi-cursor-pointer, .wifi-face-wifi {
   cursor: url(img/wifi-cursor-pointer.svg) 9 4, pointer;
 }
 
@@ -500,6 +500,7 @@ a.wifi-text-qr-text:hover {
 }
 
 .wifi-foot-links {
+    -webkit-tap-highlight-color: transparent;
     margin: 0 auto 10px;
     display: flex;
     justify-content: center;
