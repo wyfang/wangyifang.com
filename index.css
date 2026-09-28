@@ -390,6 +390,82 @@ a:active {
         border-color 0.4s cubic-bezier(0.08, 0.64, 0.41, 0.99);
 }
 
+/* 长账号保留完整标签，在窄屏上把账号放到标签下方。 */
+.wifi-account-long,
+.wifi-account-wrap {
+    min-width: 0;
+    max-width: calc(100% - 18px);
+}
+
+.wifi-account-wrap > .wifi-account-long {
+    max-width: 100%;
+}
+
+.wifi-account-long > .wifi-url1 {
+    flex-shrink: 0;
+}
+
+.wifi-account-long > .no-select {
+    flex-shrink: 0;
+    white-space: nowrap;
+    word-break: normal;
+}
+
+.wifi-account-value {
+    min-width: 0;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+.wifi-account-domain {
+    display: inline-block;
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+.wifi-account-phone,
+.wifi-account-phone-separator {
+    white-space: nowrap;
+    word-break: normal;
+}
+
+@media (max-width: 600px) {
+    .wifi-account-long {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        column-gap: 8px;
+        row-gap: 2px;
+        align-items: start;
+        text-align: left;
+    }
+
+    .wifi-account-long > .wifi-url1 {
+        grid-column: 1;
+        grid-row: 1;
+        margin-right: 0;
+    }
+
+    .wifi-account-long > .no-select {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .wifi-account-long > .wifi-account-value {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .wifi-account-phones {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wifi-account-phone-separator {
+        display: none;
+    }
+}
+
 a.wifi-text:link,
 a.wifi-text:visited,
 a.wifi-text:active,

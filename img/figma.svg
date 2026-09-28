@@ -1,0 +1,17 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Figma mark: https://static.figma.com/app/icon/1/favicon.svg; circular background added for this site's link icons. -->
+  <circle cx="35" cy="35" r="35" fill="#1E1E1E"/>
+  <g transform="translate(21 14) scale(2.8)">
+    <use xlink:href="#figma-circle" transform="translate(5 5)" fill="#1ABCFE"/>
+    <use xlink:href="#figma-bottom" transform="translate(0 10)" fill="#0ACF83"/>
+    <use xlink:href="#figma-top-right" transform="matrix(0 1 1 0 5 0)" fill="#FF7262"/>
+    <use xlink:href="#figma-left" transform="matrix(1 0 0 -1 0 5)" fill="#F24E1E"/>
+    <use xlink:href="#figma-left" transform="matrix(1 0 0 -1 0 10)" fill="#A259FF"/>
+  </g>
+  <defs>
+    <path id="figma-circle" d="M0 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1-5 0z"/>
+    <path id="figma-bottom" d="M0 2.5A2.5 2.5 0 0 1 2.5 0H5v2.5a2.5 2.5 0 0 1-5 0z"/>
+    <path id="figma-top-right" d="M0 0h5v2.5a2.5 2.5 0 0 1-5 0V0z"/>
+    <path id="figma-left" d="M0 2.5A2.5 2.5 0 0 1 2.5 0H5v5H2.5A2.5 2.5 0 0 1 0 2.5z"/>
+  </defs>
+</svg>
