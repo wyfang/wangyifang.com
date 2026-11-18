@@ -28,7 +28,7 @@ test("public asset policy excludes operations and keeps website and license file
     "scripts/avatar.js", "fonts/GoogleSansFlex.woff2",
     "scripts/pdfviewer/build/pdf.worker.mjs", "scripts/pdfviewer/web/wasm/openjpeg.wasm",
     "scripts/pdfviewer/web/cmaps/LICENSE", "scripts/pdfviewer/web/standard_fonts/LICENSE_FOXIT",
-    "licenses/AGPL-3.0-only.txt", "steamgame/Wi-Fi/pets/猫/pet.json",
+    "licenses/AGPL-3.0-only.txt",
   ]) {
     assert.equal(isPublicAsset(filename), true, filename);
   }
@@ -38,7 +38,7 @@ test("public asset policy excludes operations and keeps website and license file
     "tests/worker-assets.test.mjs", "AGENTS.md", "README.md", "package.json",
     "package-lock.json", "wrangler.jsonc", ".env", ".github/workflows/build.yml",
     "img/.env.production", "img/package.json", "img/wrangler.preview.jsonc",
-    "img/preview.test.js", "steamgame/Wi-Fi/vite.config.js", "img/node_modules/library.js",
+    "img/preview.test.js", "img/node_modules/library.js",
     "img/tests/fixture.json", "img/dist/output.js", "img/src/private.js",
     "scripts/pdfviewer/web/build/internal.js", "fonts/../package.json",
     "/index.html", "fonts\\private.woff2",
@@ -88,28 +88,21 @@ test("analytics injection removes duplicate tags and is stable between builds", 
   assert.equal(await readFile(path.join(f.outputDirectory, "index.html"), "utf8"), first);
 });
 
-test("hatch-pet downloads include the full skill without publishing unrelated scripts", async (t) => {
+test("retired Wi-Fi pages, downloads and stats stay outside public assets", async (t) => {
   const f = await fixture(t);
-  const included = [
+  const retired = [
+    "steamgame/Wi-Fi/index.html",
+    "steamgame/Wi-Fi/pet.html",
+    "steamgame/Wi-Fi/pets/manifest.json",
     "steamgame/Wi-Fi/skills/hatch-pet.zip",
-    "steamgame/Wi-Fi/skills/hatch-pet/SKILL.md",
-    "steamgame/Wi-Fi/skills/hatch-pet/LICENSE.txt",
-    "steamgame/Wi-Fi/skills/hatch-pet/agents/openai.yaml",
-    "steamgame/Wi-Fi/skills/hatch-pet/references/animation-rows.md",
-    "steamgame/Wi-Fi/skills/hatch-pet/scripts/compose_atlas.py",
   ];
-  const excluded = [
-    "steamgame/Wi-Fi/skills/other.zip",
-    "steamgame/Wi-Fi/skills/hatch-pet/scripts/private.py",
-    "steamgame/Wi-Fi/skills/hatch-pet/.env",
-    "steamgame/Wi-Fi/scripts/compose_atlas.py",
-  ];
-  for (const filename of [...included, ...excluded]) await f.write(filename);
-  await prepareWorkerAssets(f);
-  for (const filename of included) await access(path.join(f.outputDirectory, filename));
-  for (const filename of excluded) {
-    await assert.rejects(access(path.join(f.outputDirectory, filename)), { code: "ENOENT" });
+  for (const filename of retired) {
+    await f.write(filename);
+    assert.equal(isPublicAsset(filename), false, filename);
   }
+  await prepareWorkerAssets(f);
+  await access(path.join(f.outputDirectory, "index.html"));
+  await assert.rejects(access(path.join(f.outputDirectory, "steamgame")), { code: "ENOENT" });
 });
 
 test("invalid HTML leaves the last successful output intact", async (t) => {

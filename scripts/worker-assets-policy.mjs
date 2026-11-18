@@ -31,7 +31,6 @@ export const publicDirectories = new Set([
   "jquery",
   "licenses",
   "share",
-  "steamgame",
 ]);
 
 export const publicScripts = new Set([
@@ -44,18 +43,6 @@ export const publicScripts = new Set([
   "scripts/site-age.js",
   "scripts/theme.js",
   "scripts/visitor-stats.js",
-]);
-
-// 玩家下载的完整 skill 包；仅公开这些固定文件，不放宽其他脚本的发布范围。
-const publicSkillFiles = new Set([
-  "steamgame/Wi-Fi/skills/hatch-pet.zip",
-  ...[
-    "LICENSE.txt", "SKILL.md", "agents/openai.yaml",
-    "references/animation-rows.md", "references/codex-pet-contract.md", "references/qa-rubric.md",
-    "scripts/compose_atlas.py", "scripts/derive_running_left_from_running_right.py",
-    "scripts/extract_strip_frames.py", "scripts/inspect_frames.py", "scripts/make_contact_sheet.py",
-    "scripts/prepare_pet_run.py", "scripts/render_animation_previews.py", "scripts/validate_atlas.py",
-  ].map((file) => `steamgame/Wi-Fi/skills/hatch-pet/${file}`),
 ]);
 
 const staticExtensions = new Set([
@@ -82,7 +69,7 @@ export function isPublicAsset(relativePath) {
   if (parts.some((part) => !part || part.startsWith(".")) || relativePath.includes("\\")) {
     return false;
   }
-  if (publicRootFiles.has(relativePath) || publicScripts.has(relativePath) || publicSkillFiles.has(relativePath)) {
+  if (publicRootFiles.has(relativePath) || publicScripts.has(relativePath)) {
     return true;
   }
 
